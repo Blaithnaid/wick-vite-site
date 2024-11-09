@@ -5,9 +5,6 @@ import { useEffect } from "react";
 import Header from "./Header";
 
 const Hero = () => {
-	useEffect(() => {
-		document.title = "Wick | Home";
-	}, []);
 	return (
 		<div className="bg-white h-full w-full">
 			<Header />

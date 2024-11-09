@@ -3,14 +3,14 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 
-import Hero from "./components/Hero";
+import Home from "./pages/Home";
 
 function App() {
 	const [count, setCount] = useState(0);
 
 	return (
 		<div className="h-full w-full">
-			<Hero />
+			<Home />
 		</div>
 	);
 }
