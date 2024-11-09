@@ -8,7 +8,11 @@ import Hero from "./assets/components/Hero";
 function App() {
 	const [count, setCount] = useState(0);
 
-	return <Hero />;
+	return (
+		<div className="h-full w-full">
+			<Hero />
+		</div>
+	);
 }
 
 export default App;
