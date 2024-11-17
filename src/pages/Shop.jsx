@@ -1,4 +1,4 @@
-// src/components/Shop.jsx
+
 import React from 'react';
 
 const Shop = () => {

@@ -5,7 +5,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Shop from './components/Shop';
+import Shop from './pages/Shop';
+import Login from './pages/Login';
 import "./App.css";
 
 import Home from "./pages/Home";
@@ -32,6 +33,7 @@ const Home = () => (
 		  <Route path="/" element={<Home />} />
 		  <Route path="/shop" element={<Shop />} />
 		  <Route path="/about" element={<About />} />
+		  <Route path="/login" element={<Login />} />
 		</Routes>
 	  </Router>
 	);
