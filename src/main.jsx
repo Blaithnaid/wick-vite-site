@@ -9,16 +9,3 @@ createRoot(document.getElementById('root')).render(
   </StrictMode>,
 )
 
-const App = () => {
-  return (
-    <div>
-      <Navbar />
-      <main style={{ padding: '20px' }}>
-        <h2>Welcome to the React App</h2>
-        <p>This is a simple example of using a Navbar component.</p>
-      </main>
-    </div>
-  );
-};
-
-ReactDOM.render(<App />, document.getElementById('root'));
