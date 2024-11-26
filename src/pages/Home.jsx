@@ -33,7 +33,7 @@ const Home = () => {
 					</div>
 				</div>
 				<div className="row g-4">
-					{/* You can pass props or iterate through feature items dynamically */}
+				
 					<Features />
 				</div>
 			</div>
