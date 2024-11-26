@@ -3,11 +3,13 @@ import { useState } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
+
 const navigation = [
 	{ name: "About", href: "#" },
 	{ name: "Features", href: "#" },
 	{ name: "Platforms", href: "#" },
 	{ name: "Download", href: "#" },
+	{ name: "Shop", href: "./pages/Shop.jsx" },
 ];
 
 const Header = () => {
@@ -20,7 +22,7 @@ const Header = () => {
 			>
 				<div className="flex lg:flex-1">
 					<a href="#" className="-m-1.5 p-1.5">
-						<span className="sr-only">Your Company</span>
+						<span className="sr-only">WICK</span>
 						<img
 							alt=""
 							src="./src/assets/wick-logoonly.svg"

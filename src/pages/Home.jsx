@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import Hero from "../components/Hero";
 import Features from "../components/Features";
 import Navbar from "../components/Navbar"; // Import the Navbar component
+import Header from "../components/Header";
 
 const Home = () => {
 	useEffect(() => {
@@ -12,9 +13,6 @@ const Home = () => {
 
 	return (
 		<>
-			{/* Navbar */}
-			<Navbar /> 
-
 			{/* Hero Section */}
 			<div className="container-fluid bg-light py-5">
 				<div className="container text-center">
