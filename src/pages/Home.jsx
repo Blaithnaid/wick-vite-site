@@ -28,7 +28,7 @@ const Home = () => {
 					<div className="col text-center mb-4">
 						<h2 className="display-5 fw-bold">Our Features</h2>
 						<p className="text-muted">
-							Discover what makes us unique and reliable for all your needs.
+							Discover what it takes to reach the hight of social management 
 						</p>
 					</div>
 				</div>
