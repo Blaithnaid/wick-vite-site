@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import Hero from "../components/Hero";
 import Features from "../components/Features";
 import Navbar from "../components/Navbar"; // Import the Navbar component
-import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS
+import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS 
 
 const Home = () => {
 	useEffect(() => {
