@@ -125,7 +125,7 @@ const Header = () => {
 };
 
 const Card = ({ title, description, imgSrc }) => (
-  <div className="max-w-sm rounded-lg shadow-lg overflow-hidden bg-white">
+  <div className="max-w-sm rounded-lg shadow-lg overflow-hidden bg-white hover:scale-105 transform transition-all duration-300">
     <img src={imgSrc} alt={title} className="w-full h-48 object-cover" />
     <div className="p-6">
       <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
@@ -137,11 +137,13 @@ const Card = ({ title, description, imgSrc }) => (
 const Layout = () => (
   <main className="mt-16">
     {/* Hero Section */}
-    <section className="bg-indigo-50 py-16 text-center">
-      <h1 className="text-4xl font-bold text-gray-900">
+    <section
+      className="bg-gradient-to-r from-[#69bb7b] to-[#78c288] py-16 text-center"
+    >
+      <h1 className="text-4xl font-bold text-white">
         Welcome to WICK
       </h1>
-      <p className="mt-4 text-lg text-gray-600">
+      <p className="mt-4 text-lg text-white/90">
         Explore the best features and platforms we offer.
       </p>
     </section>
@@ -151,21 +153,20 @@ const Layout = () => (
       <Card
         title="Feature 1"
         description="Explore the top-notch functionality."
-        imgSrc=""
+        imgSrc="https://via.placeholder.com/400"
       />
       <Card
         title="Feature 2"
         description="Innovative solutions for your needs."
-        imgSrc=""
+        imgSrc="https://via.placeholder.com/400"
       />
       <Card
         title="Feature 3"
         description="Seamless integration and usage."
-        imgSrc=""
+        imgSrc="https://via.placeholder.com/400"
       />
     </section>
   </main>
 );
-
 
 export default Header;
