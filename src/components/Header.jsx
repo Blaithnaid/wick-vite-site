@@ -153,17 +153,17 @@ const Layout = () => (
       <Card
         title="Feature 1"
         description="Explore the top-notch functionality."
-        imgSrc="https://via.placeholder.com/400"
+        imgSrc=""
       />
       <Card
         title="Feature 2"
         description="Innovative solutions for your needs."
-        imgSrc="https://via.placeholder.com/400"
+        imgSrc=""
       />
       <Card
         title="Feature 3"
         description="Seamless integration and usage."
-        imgSrc="https://via.placeholder.com/400"
+        imgSrc=""
       />
     </section>
   </main>
