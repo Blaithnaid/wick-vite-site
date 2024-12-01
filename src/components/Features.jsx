@@ -10,25 +10,25 @@ import {
 	  name: "User Management",
 	  description: "Manage user access and permissions seamlessly.",
 	  icon: UserCircleIcon,
-	  imageSrc: "https://via.placeholder.com/300", // Placeholder for feature-specific image
+	  imageSrc: "", 
 	},
 	{
 	  name: "Cloud Storage",
 	  description: "Securely store and access your files from anywhere.",
 	  icon: CloudArrowUpIcon,
-	  imageSrc: "https://via.placeholder.com/300", // Placeholder for feature-specific image
+	  imageSrc: "", 
 	},
 	{
 	  name: "Enhanced Security",
 	  description: "Advanced encryption to protect your data.",
 	  icon: FingerPrintIcon,
-	  imageSrc: "https://via.placeholder.com/300", // Placeholder for feature-specific image
+	  imageSrc: "", 
 	},
 	{
 	  name: "Data Privacy",
 	  description: "Your data is safe and never shared without consent.",
 	  icon: LockClosedIcon,
-	  imageSrc: "https://via.placeholder.com/300", // Placeholder for feature-specific image
+	  imageSrc: "", 
 	},
   ];
   
