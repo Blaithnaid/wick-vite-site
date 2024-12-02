@@ -1,6 +1,8 @@
 
 import React from "react";
 import { useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import Shop from './Shop';
 import Hero from "../components/Hero";
 import Features from "../components/Features";
 import Navbar from "../components/Navbar"; // Import the Navbar component
