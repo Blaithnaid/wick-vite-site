@@ -1,8 +1,7 @@
-
 import React from "react";
 import { useEffect } from "react";
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import Shop from './Shop';
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import Shop from "./Shop";
 import Hero from "../components/Hero";
 import Features from "../components/Features";
 import Navbar from "../components/Navbar"; // Import the Navbar component
@@ -16,28 +15,28 @@ const Home = () => {
 	return (
 		<>
 			{/* Hero Section */}
-			<div className="container-fluid bg-light py-5">
-				<div className="container text-center">
+			<div className="container-fluid bg-light py-5 d-flex justify-items-center">
+				<div className="container text-center w-100">
 					<Hero />
 				</div>
 			</div>
-
 			{/* Features Section */}
 			<div className="container py-5">
 				<div className="row">
 					<div className="col text-center mb-4">
-						<h2 className="display-5 fw-bold text-[#78c288]">Our Features</h2>
+						<h2 className="display-5 fw-bold text-[#78c288]">
+							Our Features
+						</h2>
 						<p className="text-muted text-[#78c288]">
-							Discover what it takes to reach the hight of social management 
+							Discover what it takes to reach the hight of social
+							management
 						</p>
 					</div>
 				</div>
 				<div className="row g-4">
-				
 					<Features />
 				</div>
 			</div>
-
 			{/* Footer */}
 			<footer className="bg-dark text-[#78c288] text-center py-3">
 				<p className="mb-0">
