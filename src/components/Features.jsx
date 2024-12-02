@@ -34,17 +34,17 @@ import {
   
   const Features = () => {
 	return (
-	  <div className="bg-gradient-to-r from-gray-800 to-gray-900 py-24 sm:py-32">
+	  <div className="bg-black from-gray-800 to-gray-900 py-24 sm:py-32">
 		<div className="mx-auto max-w-7xl px-6 lg:px-8">
 		  {/* Header Section */}
-		  <div className="mx-auto max-w-2xl lg:text-center">
-			<h2 className="text-base font-semibold text-indigo-400">
+		  <div className="mx-auto max-w-2xl lg:text-center ">
+			<h2 className="text-base font-semibold text-[#78c288] ">
 			  Empower Your Workflow
 			</h2>
 			<p className="mt-2 text-4xl font-bold tracking-tight text-white sm:text-5xl">
 			  Features Tailored for Your Success
 			</p>
-			<p className="mt-6 text-lg text-gray-400">
+			<p className="mt-6 text-lg text-[#78c288]">
 			  Streamline your processes with tools designed to simplify and
 			  enhance every aspect of your work. From security to storage, we've
 			  got you covered.
