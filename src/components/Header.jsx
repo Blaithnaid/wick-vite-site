@@ -6,6 +6,7 @@ const navigation = [
   { name: "Home", href: "#" },
   { name: "Download", href: "#" },
   { name: "Shop", href: "./pages/Shop.jsx" },
+  
 ];
 
 const Header = () => {
@@ -16,7 +17,7 @@ const Header = () => {
       {/* Navbar */}
       <nav
         aria-label="Global"
-        className="flex items-center justify-between bg-white shadow-md p-6 lg:px-8"
+        className="flex items-center justify-between bg-[#78c288] shadow-md p-6 lg:px-8" // Matrix green background color
       >
         {/* Logo Section */}
         <div className="flex lg:flex-1">
@@ -30,6 +31,8 @@ const Header = () => {
           </a>
         </div>
 
+        
+
         {/* Mobile Menu Button */}
         <div className="flex lg:hidden">
           <button
@@ -41,6 +44,7 @@ const Header = () => {
             <Bars3Icon aria-hidden="true" className="h-6 w-6" />
           </button>
         </div>
+        
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex lg:gap-x-12">
@@ -125,17 +129,17 @@ const Header = () => {
 };
 
 const Card = ({ title, description, imgSrc }) => (
-  <div className="max-w-sm rounded-lg shadow-lg overflow-hidden bg-white hover:scale-105 transform transition-all duration-300">
+  <div className="max-w-sm rounded-lg shadow-lg overflow-hidden bg-[#78c288] hover:scale-105 transform transition-all duration-300">
     <img src={imgSrc} alt={title} className="w-full h-48 object-cover" />
     <div className="p-6">
-      <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
-      <p className="mt-2 text-gray-700">{description}</p>
+      <h3 className="text-lg font-semibold text-white">{title}</h3>
+      <p className="mt-2 text-white/90">{description}</p>
     </div>
   </div>
 );
 
 const Layout = () => (
-  <main className="mt-16">
+  <main className="mt-16 bg-[#78c288]">
     {/* Hero Section */}
     <section
       className="bg-gradient-to-r from-[#69bb7b] to-[#78c288] py-16 text-center"

@@ -24,8 +24,8 @@ const Home = () => {
 			<div className="container py-5">
 				<div className="row">
 					<div className="col text-center mb-4">
-						<h2 className="display-5 fw-bold">Our Features</h2>
-						<p className="text-muted">
+						<h2 className="display-5 fw-bold text-[#78c288]">Our Features</h2>
+						<p className="text-muted text-[#78c288]">
 							Discover what it takes to reach the hight of social management 
 						</p>
 					</div>
@@ -37,7 +37,7 @@ const Home = () => {
 			</div>
 
 			{/* Footer */}
-			<footer className="bg-dark text-white text-center py-3">
+			<footer className="bg-dark text-[#78c288] text-center py-3">
 				<p className="mb-0">
 					&copy; {new Date().getFullYear()} Wick. All rights reserved.
 				</p>

@@ -15,7 +15,7 @@ const Card = ({ title, description, imgSrc }) => (
 
 const Hero = () => {
   return (
-    <div className="bg-white h-full w-full">
+    <div className="bg-black h-full w-full">
       {/* Reusable Header */}
       <Header />
 
@@ -37,10 +37,10 @@ const Hero = () => {
 
         {/* Main Content */}
         <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56 text-center">
-          <h1 className="text-balance text-5xl font-bold tracking-tight text-gray-900 sm:text-7xl">
+          <h1 className="text-balance text-5xl font-bold tracking-tight text-[#78c288] sm:text-7xl">
             Social Media, Simplified.
           </h1>
-          <p className="mt-8 text-lg font-medium text-gray-500 sm:text-xl/8">
+          <p className="mt-8 text-lg font-medium text-[#78c288] sm:text-xl/8">
             Wick brings all of your platforms into one place, making it easier
             than ever to manage your social media presence.
           </p>
@@ -51,7 +51,7 @@ const Hero = () => {
             >
               Download
             </a>
-            <a href="#" className="text-sm font-semibold text-gray-900">
+            <a href="#" className="text-sm font-semibold text-[#78c288]">
               Learn more <span aria-hidden="true">→</span>
             </a>
           </div>
@@ -73,7 +73,7 @@ const Hero = () => {
       </div>
 
       {/* Features Section */}
-      <section className="container mx-auto py-16 px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <section className="container mx-auto py-16 px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 ">
         <Card
           title="Integrated Dashboard"
           description="All your social media accounts in one unified interface."
