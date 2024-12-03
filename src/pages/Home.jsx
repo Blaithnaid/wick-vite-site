@@ -14,6 +14,8 @@ const Home = () => {
 
 	return (
 		<>
+			{/* Header */}
+			<Header />
 			{/* Hero Section */}
 			<div className="container-fluid bg-light py-5 d-flex justify-items-center">
 				<div className="container text-center w-100">
