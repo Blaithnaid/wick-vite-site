@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import logo from "../assets/wick-logoonly.svg";
 
 const navigation = [
 	// the only routes we can use in this project are /home and /shop rn
@@ -27,7 +28,7 @@ const Header = () => {
 						<span className="sr-only">WICK</span>
 						<img
 							alt="WICK Logo"
-							src="./src/assets/wick-logoonly.svg"
+							src={logo}
 							className="h-10 w-auto"
 						/>
 					</a>
