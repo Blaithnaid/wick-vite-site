@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import logo from "../assets/wick-logoonly.svg"; // Correct logo import
+import Header from '../components/Header';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -82,7 +83,7 @@ const Login = () => {
         }
       `}
       </style>
-
+      <Header />
       {/* Navbar */}
       <nav>
         {/* Logo */}
@@ -206,6 +207,23 @@ const Login = () => {
               }}
             >
               Login
+            </button>
+            <button
+              type="submit"
+              style={{
+                width: '100%',
+                padding: '12px 0',
+                backgroundColor: '#00FF41',
+                border: 'none',
+                color: '#000',
+                fontSize: '16px',
+                fontWeight: 'bold',
+                borderRadius: '15px',
+                cursor: 'pointer',
+                transition: 'background-color 0.3s',
+              }}
+            >
+              Sign-Up
             </button>
           </form>
         </div>
