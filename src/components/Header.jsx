@@ -4,7 +4,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import logo from "../assets/wick-logoonly.svg";
 
 const navigation = [
-	{ name: "Home", href: "/Home" },
+	{ name: "Home", href: "home" },
 	{ name: "Download", href: "/download" },
 	{ name: "Shop", href: "/shop" },
 ];
