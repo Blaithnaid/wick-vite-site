@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import logo from "../assets/wick-logoonly.svg"; // Correct logo import
 import Header from '../components/Header';
 
+
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -208,7 +209,9 @@ const Login = () => {
             >
               Login
             </button>
-            <button
+
+          </form>
+          <button
               type="submit"
               style={{
                 width: '100%',
@@ -225,11 +228,9 @@ const Login = () => {
             >
               Sign-Up
             </button>
-          </form>
         </div>
       </div>
     </div>
   );
 };
-
 export default Login;

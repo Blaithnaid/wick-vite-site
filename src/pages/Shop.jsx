@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Shop = () => {
   const products = [
@@ -9,12 +10,13 @@ const Shop = () => {
   ];
 
   return (
-    <div style={{ padding: '20px' }}>
-      <h2>Shop Page</h2>
-      <ul style={{ listStyleType: 'none', padding: 0 }}>
+    <div className="shop-container">
+      <h2 className="shop-title">Shop Page</h2>
+      <ul className="product-list">
         {products.map((product) => (
-          <li key={product.id} style={{ marginBottom: '10px' }}>
+          <li key={product.id} className="product-item">
             <strong>{product.name}</strong>: {product.price}
+            <Link to={`/product/${product.id}`} className="buy-now">Buy Now</Link>
           </li>
         ))}
       </ul>
