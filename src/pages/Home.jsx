@@ -1,5 +1,4 @@
-import React from "react";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Shop from "./Shop";
 import Hero from "../components/Hero";
@@ -17,21 +16,43 @@ const Home = () => {
 			{/* Header */}
 			<Header />
 			{/* Hero Section */}
-			<div className="container-fluid bg-light py-5 d-flex justify-items-center">
+			<div
+				className="container-fluid py-5 d-flex justify-items-center"
+				style={{
+					backgroundColor: "#000", // Black background
+					color: "#00FF41", // Matrix green text
+				}}
+			>
 				<div className="container text-center w-100">
 					<Hero />
 				</div>
 			</div>
 			{/* Features Section */}
-			<div className="container py-5">
+			<div
+				className="container py-5"
+				style={{
+					backgroundColor: "#111", // Slightly lighter black for contrast
+					color: "#00FF41",
+				}}
+			>
 				<div className="row">
 					<div className="col text-center mb-4">
-						<h2 className="display-5 fw-bold text-[#78c288]">
+						<h2
+							className="display-5 fw-bold"
+							style={{
+								color: "#00FF41",
+							}}
+						>
 							Our Features
 						</h2>
-						<p className="text-muted text-[#78c288]">
-							Discover what it takes to reach the hight of social
-							management
+						<p
+							className="text-muted"
+							style={{
+								color: "#00FF41", // Matrix green
+							}}
+						>
+							Discover what it takes to reach the heights of social
+							management.
 						</p>
 					</div>
 				</div>
@@ -40,7 +61,13 @@ const Home = () => {
 				</div>
 			</div>
 			{/* Footer */}
-			<footer className="bg-dark text-[#78c288] text-center py-3">
+			<footer
+				className="text-center py-3"
+				style={{
+					backgroundColor: "#000", // Black background
+					color: "#00FF41", // Matrix green text
+				}}
+			>
 				<p className="mb-0">
 					&copy; {new Date().getFullYear()} Wick. All rights reserved.
 				</p>
