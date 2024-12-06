@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import logo from "../assets/wick-logoonly.svg"; // Correct logo import
+import Header from "../components/Header";
 
-const SignUp = () => {
+const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -24,6 +26,8 @@ const SignUp = () => {
   };
 
   return (
+    
+
     <div
       style={{
         fontFamily: "Arial, sans-serif",
@@ -72,10 +76,27 @@ const SignUp = () => {
         }
       `}
       </style>
-
+      <Header />
       {/* Navbar */}
       <nav>
-        <img src={require("../assets/wick-logoonly.svg").default} alt="Wick Logo" />
+        {/* Logo */}
+        <div>
+          <img
+            src={logo}
+            alt="Wick Logo"
+            className="logo"
+            style={{ height: "40px" }}
+          />
+        </div>
+
+        {/* Menu */}
+        <div className="nav-content">
+          <div className="nav-menu">
+            <a href="/">Home</a>
+            <a href="/about">Download</a>
+            <a href="/shop">Shop</a>
+          </div>
+        </div>
       </nav>
 
       {/* Sign-Up Card */}
@@ -217,4 +238,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default SignIn;

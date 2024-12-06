@@ -10,7 +10,7 @@ import {
 import Navbar from "./components/Navbar";
 import Shop from "./pages/Shop";
 import Login from "./pages/Login";
-import SignUp from "./pages/SignIn";
+import SignIn from "./pages/SignIn";
 import "./App.css";
 
 import Home from "./pages/Home";
@@ -32,7 +32,7 @@ const App = () => {
 				<Route path="/shop" element={<Shop />} />
 				<Route path="/about" element={<About />} />
 				<Route path="/login" element={<Login />} />
-				<Route path="/signUp" element={<SignUp />} />
+				<Route path="/signIn" element={<SignIn />} />
 			</Routes>
 		</Router>
 	);
