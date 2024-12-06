@@ -1,7 +1,12 @@
 import { useState } from "react";
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+	BrowserRouter as Router,
+	Route,
+	Routes,
+	Navigate,
+} from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Shop from "./pages/Shop";
 import Login from "./pages/Login";
@@ -21,6 +26,7 @@ const App = () => {
 		<Router>
 			<Navbar />
 			<Routes>
+				<Route path="/" element={<Navigate to="/home" replace />} />
 				<Route path="/home" element={<Home />} />
 				<Route path="/shop" element={<Shop />} />
 				<Route path="/about" element={<About />} />
