@@ -1,0 +1,220 @@
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+const SignUp = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const navigate = useNavigate(); // React Router's navigation function
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (password !== confirmPassword) {
+      alert("Passwords do not match!");
+      return;
+    }
+
+    console.log("Sign-Up Details:", { email, password });
+    // Simulate sign-up logic
+    setTimeout(() => {
+      alert("Sign-Up Successful!");
+      navigate("/login"); // Redirect to the Login page
+    }, 1000);
+  };
+
+  return (
+    <div
+      style={{
+        fontFamily: "Arial, sans-serif",
+        minHeight: "100vh",
+        backgroundColor: "#000", // Black background
+        color: "#00FF41", // Matrix green text
+        overflow: "hidden",
+        animation: "fadeIn 1s ease-in-out",
+      }}
+    >
+      {/* CSS Animations */}
+      <style>
+        {`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+
+        @keyframes slideIn {
+          from {
+            transform: translateY(20px);
+            opacity: 0;
+          }
+          to {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+
+        nav {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 20px;
+          background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent black */
+          color: #00FF41; /* Matrix green */
+          box-shadow: 0 2px 10px rgba(0, 255, 65, 0.4); /* Glowing shadow */
+        }
+
+        nav img {
+          height: 40px;
+        }
+      `}
+      </style>
+
+      {/* Navbar */}
+      <nav>
+        <img src={require("../assets/wick-logoonly.svg").default} alt="Wick Logo" />
+      </nav>
+
+      {/* Sign-Up Card */}
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          minHeight: "calc(100vh - 80px)", // Adjusted to exclude navbar height
+        }}
+      >
+        <div
+          style={{
+            background: "#111", // Slightly lighter black
+            padding: "30px 40px",
+            borderRadius: "10px",
+            boxShadow: "0 10px 30px rgba(0, 255, 65, 0.4)", // Green glowing shadow
+            animation: "slideIn 0.8s ease-in-out",
+            width: "100%",
+            maxWidth: "400px",
+            textAlign: "center",
+          }}
+        >
+          <h2 style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "20px", color: "#00FF41" }}>
+            Create Your Account
+          </h2>
+          <form onSubmit={handleSubmit}>
+            <div style={{ marginBottom: "20px", textAlign: "left" }}>
+              <label
+                htmlFor="email"
+                style={{
+                  display: "block",
+                  fontSize: "14px",
+                  marginBottom: "5px",
+                  color: "#00FF41",
+                }}
+              >
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                style={{
+                  width: "100%",
+                  padding: "10px",
+                  fontSize: "16px",
+                  border: "1px solid #00FF41",
+                  borderRadius: "5px",
+                  backgroundColor: "#000",
+                  color: "#00FF41",
+                  transition: "border 0.3s",
+                }}
+              />
+            </div>
+            <div style={{ marginBottom: "20px", textAlign: "left" }}>
+              <label
+                htmlFor="password"
+                style={{
+                  display: "block",
+                  fontSize: "14px",
+                  marginBottom: "5px",
+                  color: "#00FF41",
+                }}
+              >
+                Password
+              </label>
+              <input
+                type="password"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                style={{
+                  width: "100%",
+                  padding: "10px",
+                  fontSize: "16px",
+                  border: "1px solid #00FF41",
+                  borderRadius: "5px",
+                  backgroundColor: "#000",
+                  color: "#00FF41",
+                  transition: "border 0.3s",
+                }}
+              />
+            </div>
+            <div style={{ marginBottom: "20px", textAlign: "left" }}>
+              <label
+                htmlFor="confirm-password"
+                style={{
+                  display: "block",
+                  fontSize: "14px",
+                  marginBottom: "5px",
+                  color: "#00FF41",
+                }}
+              >
+                Confirm Password
+              </label>
+              <input
+                type="password"
+                id="confirm-password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                required
+                style={{
+                  width: "100%",
+                  padding: "10px",
+                  fontSize: "16px",
+                  border: "1px solid #00FF41",
+                  borderRadius: "5px",
+                  backgroundColor: "#000",
+                  color: "#00FF41",
+                  transition: "border 0.3s",
+                }}
+              />
+            </div>
+            <button
+              type="submit"
+              style={{
+                width: "100%",
+                padding: "12px 0",
+                backgroundColor: "#00FF41",
+                border: "none",
+                color: "#000",
+                fontSize: "16px",
+                fontWeight: "bold",
+                borderRadius: "5px",
+                cursor: "pointer",
+                transition: "background-color 0.3s",
+              }}
+            >
+              Sign Up
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default SignUp;

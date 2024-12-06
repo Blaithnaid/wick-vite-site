@@ -33,30 +33,56 @@ const Hero = () => {
 					/>
 				</div>
 
-				{/* Main Content */}
-				<div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56 text-center">
-					<h1 className="text-balance text-5xl font-bold tracking-tight text-[#00FF41] sm:text-7xl">
-						Social Media, Simplified.
-					</h1>
-					<p className="mt-8 text-lg font-medium text-[#00FF41]/90 sm:text-xl">
-						Wick brings all of your platforms into one place, making
-						it easier than ever to manage your social media
-						presence.
-					</p>
-					<div className="mt-10 flex items-center justify-center gap-x-6">
-						<a
-							href="#"
-							className="rounded-md bg-[#00FF41] px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-[#00e839] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#00FF41]"
-						>
-							Download
-						</a>
-						<a
-							href="#"
-							className="text-sm font-semibold text-[#00FF41] hover:text-white"
-						>
-							Learn more <span aria-hidden="true">→</span>
-						</a>
-					</div>
+								{/* Main Content */}
+								<div 
+				className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56 text-center fade-in-animation"
+				>
+				{/* Inline Style for Keyframes */}
+				<style>
+					{`
+					@keyframes fadeIn {
+						from {
+						opacity: 0;
+						transform: translateY(20px); /* Slight slide-up effect */
+						}
+						to {
+						opacity: 1;
+						transform: translateY(0); /* Reset position */
+						}
+					}
+
+					.fade-in-animation {
+						animation: fadeIn 1.5s ease-in-out; /* Duration and easing for smooth fade */
+						animation-delay: 0.2s; /* Optional: Delay to control timing */
+						animation-fill-mode: both; /* Ensures the animation state is retained */
+					}
+					`}
+				</style>
+
+				{/* Text Content */}
+				<h1 className="text-balance text-5xl font-bold tracking-tight text-[#00FF41] sm:text-7xl">
+					Social Media, Simplified.
+				</h1>
+				<p className="mt-8 text-lg font-medium text-[#00FF41]/90 sm:text-xl">
+					Wick brings all of your platforms into one place, making
+					it easier than ever to manage your social media presence.
+				</p>
+				
+				{/* Buttons */}
+				<div className="mt-10 flex items-center justify-center gap-x-6">
+					<a
+					href="#"
+					className="rounded-md bg-[#00FF41] px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-[#00e839] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#00FF41]"
+					>
+					Download
+					</a>
+					<a
+					href="#"
+					className="text-sm font-semibold text-[#00FF41] hover:text-white"
+					>
+					Learn more <span aria-hidden="true">→</span>
+					</a>
+				</div>
 				</div>
 
 				{/* Bottom Gradient */}
