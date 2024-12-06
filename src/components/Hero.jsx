@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import Header from "./Header";
+import appSync from "../assets/app-sync.png";
 
 const Card = ({ title, description, imgSrc }) => (
 	<div className="max-w-sm rounded-lg shadow-lg overflow-hidden bg-white">
@@ -78,7 +79,7 @@ const Hero = () => {
 				<Card
 					title="Integrated Dashboard"
 					description="All your social media accounts in one unified interface."
-					imgSrc=""
+					imgSrc={appSync}
 				/>
 				<Card
 					title="Smart Analytics"
