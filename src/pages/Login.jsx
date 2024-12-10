@@ -50,80 +50,14 @@ const Login = () => {
             opacity: 1;
           }
         }
-
-        nav {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: 15px 40px;
-          background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent black */
-          color: #00FF41; /* Matrix green */
-          box-shadow: 0 2px 10px rgba(0, 255, 65, 0.4); /* Glowing shadow */
-        }
-
-        .nav-menu {
-          display: flex;
-          justify-content: center;
-          gap: 30px;
-        }
-
-        .nav-menu a {
-          text-decoration: none;
-          color: #00FF41;
-          font-size: 18px;
-          transition: color 0.3s ease-in-out;
-        }
-
-        .nav-menu a:hover {
-          color: white;
-        }
-
-         .nav-content {
-          flex: 1;
-          display: flex;
-          justify-content: center; /* Center the links */
-        }
-
-        .logo {
-          height: 40px;
-        }
       `}
 			</style>
 			<Header />
-			{/* Navbar */}
-			<nav>
-				{/* Logo */}
-				<div>
-					<img
-						src={logo}
-						alt="Wick Logo"
-						className="logo"
-						style={{ height: "40px" }}
-					/>
-				</div>
-
-				{/* Menu */}
-				<div className="nav-content">
-					<div className="nav-menu">
-						<a href="/">Home</a>
-						<a href="/about">Download</a>
-						<a href="/shop">Shop</a>
-					</div>
-				</div>
-			</nav>
-
 			{/* Login Card */}
-			<div
-				style={{
-					display: "flex",
-					alignItems: "center",
-					justifyContent: "center",
-					minHeight: "calc(100vh - 80px)", // Adjusted to exclude navbar height
-				}}
-			>
+			<div className="flex items-center justify-center min-h-screen">
 				<div
 					style={{
-						background: "#000",
+						background: "#",
 						padding: "30px 40px",
 						borderRadius: "10px",
 						boxShadow: "0 40px 60px rgba(55, 63, 81, 0.5)", // Green glowing shadow
@@ -133,14 +67,7 @@ const Login = () => {
 						textAlign: "center",
 					}}
 				>
-					<h2
-						style={{
-							fontSize: "24px",
-							fontWeight: "bold",
-							marginBottom: "20px",
-							color: "#00FF41",
-						}}
-					>
+					<h2 className="text-2xl font-bold text-white mb-5">
 						Welcome Back!
 					</h2>
 					<form onSubmit={handleSubmit}>
@@ -148,32 +75,18 @@ const Login = () => {
 							style={{ marginBottom: "20px", textAlign: "left" }}
 						>
 							<label
+								className="block text-sm font-medium text-white"
 								htmlFor="email"
-								style={{
-									display: "block",
-									fontSize: "14px",
-									marginBottom: "5px",
-									color: "#00FF41",
-								}}
 							>
 								Email
 							</label>
 							<input
+								className="w-full size-12 border rounded bg-black text-green-500 transition-0.3s"
 								type="email"
 								id="email"
 								value={email}
 								onChange={(e) => setEmail(e.target.value)}
 								required
-								style={{
-									width: "100%",
-									padding: "10px",
-									fontSize: "16px",
-									border: "1px solid #00FF41",
-									borderRadius: "5px",
-									backgroundColor: "#000",
-									color: "#00FF41",
-									transition: "border 0.3s",
-								}}
 							/>
 						</div>
 						<div
