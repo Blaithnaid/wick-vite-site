@@ -12,7 +12,7 @@ const Home = () => {
 		<>
 			<Header />
 			<div className="container-fluid py-5 d-flex justify-items-center">
-				<div className="container text-center w-100">
+				<div className="container mb-24 text-center w-100">
 					<Hero />
 				</div>
 			</div>
@@ -25,7 +25,7 @@ const Home = () => {
 				}}
 			>
 				<div className="row">
-					<div className="col text-center mb-4 px-10">
+					<div className="col text-center mb-4 py-8 px-10">
 						<h2
 							className="display-5 fw-bold"
 							style={{
