@@ -34,7 +34,7 @@ const features = [
 
 const Features = () => {
 	return (
-		<div className="bg-black py-24 sm:py-32">
+		<div className="bg-black py-6 sm:py-20">
 			<div className="mx-auto max-w-7xl px-6 lg:px-8">
 				{/* Header Section */}
 				<div className="mx-auto max-w-2xl lg:text-center">
@@ -78,7 +78,7 @@ const Features = () => {
 							{/* Feature Details */}
 							<div className="mt-6 lg:mt-0 lg:ml-8">
 								<div className="flex items-center">
-									<div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#00FF41]">
+									<div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#78c288]">
 										<feature.icon
 											className="h-6 w-6 text-black"
 											aria-hidden="true"
@@ -88,7 +88,7 @@ const Features = () => {
 										{feature.name}
 									</h3>
 								</div>
-								<p className="mt-4 text-base text-[#00FF41]/80">
+								<p className="mt-4 text-base text-gray-200">
 									{feature.description}
 								</p>
 							</div>
