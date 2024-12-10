@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import logo from "../assets/wick-logoonly.svg"; // Correct logo import
 import Header from "../components/Header";
 
-const SignIn = () => {
+const Signup = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [confirmPassword, setConfirmPassword] = useState("");
@@ -251,4 +251,4 @@ const SignIn = () => {
 	);
 };
 
-export default SignIn;
+export default Signup;

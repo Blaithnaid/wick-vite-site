@@ -14,7 +14,7 @@ const Login = () => {
 	};
 
 	const handleSignUp = () => {
-		navigate("/SignIn"); // Navigate to the Sign-Up page
+		navigate("/signup"); // Navigate to the Sign-Up page
 	};
 
 	return (
