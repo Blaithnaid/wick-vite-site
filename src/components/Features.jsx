@@ -38,13 +38,13 @@ const Features = () => {
 			<div className="mx-auto max-w-7xl px-6 lg:px-8">
 				{/* Header Section */}
 				<div className="mx-auto max-w-2xl lg:text-center">
-					<h2 className="text-base font-semibold text-[#373f51]">
+					<h2 className="text-base font-semibold text-[#7870EB]">
 						Empower Your Workflow
 					</h2>
 					<p className="mt-2 text-4xl font-bold tracking-tight text-white sm:text-5xl">
 						Features Tailored for Your Success
 					</p>
-					<p className="mt-6 text-lg text-[#00FF41]/90">
+					<p className="mt-6 text-lg text-gray-200/90">
 						Streamline your processes with tools designed to
 						simplify and enhance every aspect of your work. From
 						security to storage, we've got you covered.

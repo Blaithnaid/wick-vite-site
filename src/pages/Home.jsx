@@ -18,26 +18,26 @@ const Home = () => {
 			</div>
 			{/* Features Section */}
 			<div
-				className="container py-5"
+				className="py-5"
 				style={{
 					backgroundColor: "#111", // Slightly lighter black for contrast
 					color: "#00FF41",
 				}}
 			>
 				<div className="row">
-					<div className="col text-center mb-4">
+					<div className="col text-center mb-4 px-10">
 						<h2
 							className="display-5 fw-bold"
 							style={{
-								color: "#00FF41",
+								color: "white",
 							}}
 						>
-							Our Features
+							<b>Our Features</b>
 						</h2>
 						<p
 							className="text-muted"
 							style={{
-								color: "#00FF41", // Matrix green
+								color: "white",
 							}}
 						>
 							Discover what it takes to reach the heights of
