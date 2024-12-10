@@ -110,14 +110,14 @@ const Login = () => {
 							/>
 						</div>
 						<button
-							className="w-full p-3 bg-[#7870EB] border-none text-white font-bold hover:bg-[#5a54b8] transition-colors duration-300"
+							className="w-full p-3 bg-[#78c288] border-none text-white font-bold hover:bg-[#5a54b8] transition-colors duration-300"
 							type="submit"
 						>
 							Login
 						</button>
 					</form>
 					<button
-						className="w-full mt-3 py-3 px-0 bg-[#78c288] border-none text-white font-bold hover:bg-[#5a9b72] transition-colors duration-300"
+						className="w-full mt-3 py-3 px-0 bg-[#7870EB] border-none text-white font-bold hover:bg-[#5a9b72] transition-colors duration-300"
 						type="button" // Changed to button (not submit) to avoid form submission
 						onClick={handleSignUp} // Call handleSignUp
 					>
