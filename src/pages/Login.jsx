@@ -57,7 +57,7 @@ const Login = () => {
 			<div className="flex items-center justify-center min-h-screen">
 				<div
 					style={{
-						background: "#",
+						background: "#373f51",
 						padding: "30px 40px",
 						borderRadius: "10px",
 						boxShadow: "0 40px 60px rgba(55, 63, 81, 0.5)", // Green glowing shadow
@@ -81,7 +81,8 @@ const Login = () => {
 								Email
 							</label>
 							<input
-								className="w-full size-12 border rounded bg-black text-green-500 transition-0.3s"
+								className="w-full size-12 border rounded bg-gray-900 text-white pl-2 transition-0.3s"
+								placeholder="e.g. johnsmith@gmail.com"
 								type="email"
 								id="email"
 								value={email}
@@ -93,62 +94,34 @@ const Login = () => {
 							style={{ marginBottom: "20px", textAlign: "left" }}
 						>
 							<label
+								className="block text-sm font-medium text-white"
 								htmlFor="password"
-								style={{
-									display: "block",
-									fontSize: "14px",
-									marginBottom: "5px",
-									color: "#00FF41",
-								}}
 							>
 								Password
 							</label>
 							<input
+								className="w-full size-12 border rounded bg-gray-900 text-white pl-2 transition-0.3s"
+								placeholder="Like, 'ILoveWick2024'."
 								type="password"
 								id="password"
 								value={password}
 								onChange={(e) => setPassword(e.target.value)}
 								required
-								style={{
-									width: "100%",
-									padding: "10px",
-									fontSize: "16px",
-									border: "1px solid #00FF41",
-									borderRadius: "5px",
-									backgroundColor: "#000",
-									color: "#00FF41",
-									transition: "border 0.3s",
-								}}
 							/>
 						</div>
 						<button
+							className="w-full p-3 bg-[#7870EB] border-none text-white font-bold hover:bg-[#5a54b8] transition-colors duration-300"
 							type="submit"
-							style={{
-								width: "100%",
-								padding: "12px 0",
-								backgroundColor: "#00FF41",
-								border: "none",
-								color: "#000",
-								fontSize: "16px",
-								fontWeight: "bold",
-								borderRadius: "5px",
-								cursor: "pointer",
-								transition: "background-color 0.3s",
-							}}
 						>
 							Login
 						</button>
 					</form>
 					<button
+						className="w-full mt-3 py-3 px-0 bg-[#78c288] border-none text-white font-bold hover:bg-[#5a9b72] transition-colors duration-300"
 						type="button" // Changed to button (not submit) to avoid form submission
 						onClick={handleSignUp} // Call handleSignUp
 						style={{
-							width: "100%",
-							marginTop: "15px",
-							padding: "12px 0",
-							backgroundColor: "#00FF41",
 							border: "none",
-							color: "#000",
 							fontSize: "16px",
 							fontWeight: "bold",
 							borderRadius: "5px",
