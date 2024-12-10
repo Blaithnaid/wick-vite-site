@@ -25,17 +25,12 @@ const Signup = () => {
 		}, 1000);
 	};
 
+	const handleLogin = () => {
+		navigate("/login"); // Navigate to the Sign-Up page
+	};
+
 	return (
-		<div
-			style={{
-				fontFamily: "Arial, sans-serif",
-				minHeight: "100vh",
-				backgroundColor: "#000", // Black background
-				color: "#00FF41", // Matrix green text
-				overflow: "hidden",
-				animation: "fadeIn 1s ease-in-out",
-			}}
-		>
+		<div className="font-sans mh-100vh bg-black text-white overflow-hidden animate-fadeIn">
 			{/* CSS Animations */}
 			<style>
 				{`
@@ -58,193 +53,92 @@ const Signup = () => {
             opacity: 1;
           }
         }
-
-        nav {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          padding: 20px;
-          background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent black */
-          color: #00FF41; /* Matrix green */
-          box-shadow: 0 2px 10px rgba(0, 255, 65, 0.4); /* Glowing shadow */
-        }
-
-        nav img {
-          height: 40px;
-        }
       `}
 			</style>
 			<Header />
-			{/* Navbar */}
-			<nav>
-				{/* Logo */}
-				<div>
-					<img
-						src={logo}
-						alt="Wick Logo"
-						className="logo"
-						style={{ height: "40px" }}
-					/>
-				</div>
-
-				{/* Menu */}
-				<div className="nav-content">
-					<div className="nav-menu">
-						<a href="/">Home</a>
-						<a href="/about">Download</a>
-						<a href="/shop">Shop</a>
-					</div>
-				</div>
-			</nav>
-
-			{/* Sign-Up Card */}
-			<div
-				style={{
-					display: "flex",
-					alignItems: "center",
-					justifyContent: "center",
-					minHeight: "calc(100vh - 80px)", // Adjusted to exclude navbar height
-				}}
-			>
+			<div className="flex items-center justify-center min-h-screen">
 				<div
+					className="w-full bg-[#373f51] p-8 rounded-lg shadow-lg align-center"
 					style={{
-						background: "#111", // Slightly lighter black
-						padding: "30px 40px",
-						borderRadius: "10px",
-						boxShadow: "0 10px 30px rgba(0, 255, 65, 0.4)", // Green glowing shadow
 						animation: "slideIn 0.8s ease-in-out",
-						width: "100%",
 						maxWidth: "400px",
-						textAlign: "center",
 					}}
 				>
-					<h2
-						style={{
-							fontSize: "24px",
-							fontWeight: "bold",
-							marginBottom: "20px",
-							color: "#00FF41",
-						}}
-					>
-						Create Your Account
+					<h2 className="text-2xl font-bold text-white mb-5">
+						Welcome Aboard!
 					</h2>
 					<form onSubmit={handleSubmit}>
 						<div
 							style={{ marginBottom: "20px", textAlign: "left" }}
 						>
 							<label
+								className="block text-sm font-medium text-white"
 								htmlFor="email"
-								style={{
-									display: "block",
-									fontSize: "14px",
-									marginBottom: "5px",
-									color: "#00FF41",
-								}}
 							>
 								Email
 							</label>
 							<input
+								className="w-full size-12 border rounded bg-gray-900 text-white placeholder-opacity-20 pl-2 transition-0.3s"
+								placeholder="e.g. johnsmith@gmail.com"
 								type="email"
 								id="email"
 								value={email}
 								onChange={(e) => setEmail(e.target.value)}
 								required
-								style={{
-									width: "100%",
-									padding: "10px",
-									fontSize: "16px",
-									border: "1px solid #00FF41",
-									borderRadius: "5px",
-									backgroundColor: "#000",
-									color: "#00FF41",
-									transition: "border 0.3s",
-								}}
 							/>
 						</div>
 						<div
 							style={{ marginBottom: "20px", textAlign: "left" }}
 						>
 							<label
+								className="block text-sm font-medium text-white"
 								htmlFor="password"
-								style={{
-									display: "block",
-									fontSize: "14px",
-									marginBottom: "5px",
-									color: "#00FF41",
-								}}
 							>
 								Password
 							</label>
 							<input
+								className="w-full size-12 border rounded bg-gray-900 text-white placeholder-opacity-20 pl-2 transition-0.3s"
+								placeholder="Like, 'ILoveWick2024'."
 								type="password"
 								id="password"
 								value={password}
 								onChange={(e) => setPassword(e.target.value)}
 								required
-								style={{
-									width: "100%",
-									padding: "10px",
-									fontSize: "16px",
-									border: "1px solid #00FF41",
-									borderRadius: "5px",
-									backgroundColor: "#000",
-									color: "#00FF41",
-									transition: "border 0.3s",
-								}}
 							/>
 						</div>
 						<div
 							style={{ marginBottom: "20px", textAlign: "left" }}
 						>
 							<label
-								htmlFor="confirm-password"
-								style={{
-									display: "block",
-									fontSize: "14px",
-									marginBottom: "5px",
-									color: "#00FF41",
-								}}
+								className="block text-sm font-medium text-white"
+								htmlFor="confirmPassword"
 							>
 								Confirm Password
 							</label>
 							<input
+								className="w-full size-12 border rounded bg-gray-900 text-white placeholder-opacity-20 pl-2 transition-0.3s"
+								placeholder="Same as above..."
 								type="password"
-								id="confirm-password"
+								id="confirmPassword"
 								value={confirmPassword}
-								onChange={(e) =>
-									setConfirmPassword(e.target.value)
-								}
+								onChange={(e) => setPassword(e.target.value)}
 								required
-								style={{
-									width: "100%",
-									padding: "10px",
-									fontSize: "16px",
-									border: "1px solid #00FF41",
-									borderRadius: "5px",
-									backgroundColor: "#000",
-									color: "#00FF41",
-									transition: "border 0.3s",
-								}}
 							/>
 						</div>
 						<button
+							className="w-full p-3 bg-[#7870EB] border-none text-white font-bold hover:bg-[#5a54b8] transition-colors duration-300"
 							type="submit"
-							style={{
-								width: "100%",
-								padding: "12px 0",
-								backgroundColor: "#00FF41",
-								border: "none",
-								color: "#000",
-								fontSize: "16px",
-								fontWeight: "bold",
-								borderRadius: "5px",
-								cursor: "pointer",
-								transition: "background-color 0.3s",
-							}}
 						>
-							Sign Up
+							Login
 						</button>
 					</form>
+					<button
+						className="w-full mt-3 py-3 px-0 bg-[#78c288] border-none text-white font-bold hover:bg-[#5a9b72] transition-colors duration-300"
+						type="button" // Changed to button (not submit) to avoid form submission
+						onClick={handleLogin} // Call handleSignUp
+					>
+						Sign up
+					</button>
 				</div>
 			</div>
 		</div>
