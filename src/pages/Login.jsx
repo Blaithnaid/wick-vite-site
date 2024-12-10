@@ -18,16 +18,7 @@ const Login = () => {
 	};
 
 	return (
-		<div
-			style={{
-				fontFamily: "Arial, sans-serif",
-				minHeight: "100vh",
-				backgroundColor: "#000", // Black background
-				color: "#00FF41", // Matrix green text
-				overflow: "hidden",
-				animation: "fadeIn 1s ease-in-out",
-			}}
-		>
+		<div classname="font-sans mh-100vh bg-black text-white overflow-hidden animate-fadeIn">
 			{/* CSS Animations */}
 			<style>
 				{`
