@@ -10,25 +10,25 @@ const features = [
 		name: "User Management",
 		description: "Manage user access and permissions seamlessly.",
 		icon: UserCircleIcon,
-		imageSrc: "",
+		imageSrc: "https://picsum.photos/400/400?random=1",
 	},
 	{
 		name: "Cloud Storage",
 		description: "Securely store and access your files from anywhere.",
 		icon: CloudArrowUpIcon,
-		imageSrc: "",
+		imageSrc: "https://picsum.photos/400/400?random=2",
 	},
 	{
 		name: "Enhanced Security",
 		description: "Advanced encryption to protect your data.",
 		icon: FingerPrintIcon,
-		imageSrc: "",
+		imageSrc: "https://picsum.photos/400/400?random=3",
 	},
 	{
 		name: "Data Privacy",
 		description: "Your data is safe and never shared without consent.",
 		icon: LockClosedIcon,
-		imageSrc: "",
+		imageSrc: "https://picsum.photos/400/400?random=4",
 	},
 ];
 
@@ -38,16 +38,16 @@ const Features = () => {
 			<div className="mx-auto max-w-7xl px-6 lg:px-8">
 				{/* Header Section */}
 				<div className="mx-auto max-w-2xl lg:text-center">
-					<h2 className="text-base font-semibold text-[#00FF41]">
+					<h2 className="text-base font-semibold text-[#373f51]">
 						Empower Your Workflow
 					</h2>
 					<p className="mt-2 text-4xl font-bold tracking-tight text-white sm:text-5xl">
 						Features Tailored for Your Success
 					</p>
 					<p className="mt-6 text-lg text-[#00FF41]/90">
-						Streamline your processes with tools designed to simplify and
-						enhance every aspect of your work. From security to storage, we've
-						got you covered.
+						Streamline your processes with tools designed to
+						simplify and enhance every aspect of your work. From
+						security to storage, we've got you covered.
 					</p>
 				</div>
 
@@ -68,7 +68,9 @@ const Features = () => {
 									/>
 								) : (
 									<div className="flex items-center justify-center w-48 h-48 bg-[#121212] rounded-xl border border-[#00FF41]/50">
-										<span className="text-[#00FF41]">No Image</span>
+										<span className="text-[#00FF41]">
+											No Image
+										</span>
 									</div>
 								)}
 							</div>
