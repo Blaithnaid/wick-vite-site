@@ -1,9 +1,6 @@
 import React, { useEffect } from "react";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-import Shop from "./Shop";
 import Hero from "../components/Hero";
 import Features from "../components/Features";
-import Navbar from "../components/Navbar"; // Import the Navbar component
 import Header from "../components/Header";
 
 const Home = () => {
@@ -13,16 +10,8 @@ const Home = () => {
 
 	return (
 		<>
-			{/* Header */}
 			<Header />
-			{/* Hero Section */}
-			<div
-				className="container-fluid py-5 d-flex justify-items-center"
-				style={{
-					backgroundColor: "#000", // Black background
-					color: "#00FF41", // Matrix green text
-				}}
-			>
+			<div className="container-fluid py-5 d-flex justify-items-center">
 				<div className="container text-center w-100">
 					<Hero />
 				</div>
@@ -51,8 +40,8 @@ const Home = () => {
 								color: "#00FF41", // Matrix green
 							}}
 						>
-							Discover what it takes to reach the heights of social
-							management.
+							Discover what it takes to reach the heights of
+							social management.
 						</p>
 					</div>
 				</div>
