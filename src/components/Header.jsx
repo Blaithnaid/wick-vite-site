@@ -17,7 +17,7 @@ const Header = () => {
 			{/* Navbar */}
 			<nav
 				aria-label="Global"
-				className="flex items-center justify-between bg-black shadow-md p-6 lg:px-8"
+				className="flex items-center justify-between bg-[#373F51] shadow-md p-6 lg:px-8"
 			>
 				{/* Logo Section */}
 				<div className="flex lg:flex-1">
@@ -49,7 +49,7 @@ const Header = () => {
 						<a
 							key={item.name}
 							href={item.href}
-							className="text-sm font-semibold text-[#00FF41] hover:text-white"
+							className="text-sm font-semibold text-[#A7A1F2] hover:text-white"
 						>
 							{item.name}
 						</a>
@@ -60,7 +60,7 @@ const Header = () => {
 				<div className="hidden lg:flex lg:flex-1 lg:justify-end">
 					<a
 						href="/login"
-						className="text-sm font-semibold text-[#00FF41] hover:text-white"
+						className="text-sm font-semibold text-[#A7A1F2] hover:text-white"
 					>
 						Log in <span aria-hidden="true">&rarr;</span>
 					</a>
@@ -88,7 +88,7 @@ const Header = () => {
 						<button
 							type="button"
 							onClick={() => setMobileMenuOpen(false)}
-							className="-m-2.5 rounded-md p-2.5 text-[#00FF41]"
+							className="-m-2.5 rounded-md p-2.5 text-[#A7A1F2]"
 						>
 							<span className="sr-only">Close menu</span>
 							<XMarkIcon aria-hidden="true" className="h-6 w-6" />
@@ -97,13 +97,13 @@ const Header = () => {
 
 					{/* Mobile Menu Links */}
 					<div className="mt-6 flow-root">
-						<div className="-my-6 divide-y divide-[#00FF41]">
+						<div className="-my-6 divide-y divide-[#A7A1F2]">
 							<div className="space-y-2 py-6">
 								{navigation.map((item) => (
 									<a
 										key={item.name}
 										href={item.href}
-										className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-[#00FF41] hover:bg-[#111]"
+										className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-[#A7A1F2] hover:bg-[#111]"
 									>
 										{item.name}
 									</a>
