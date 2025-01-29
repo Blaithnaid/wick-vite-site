@@ -5,7 +5,7 @@ import logo from "../assets/wick-logoonly.svg";
 
 const navigation = [
 	{ name: "Home", href: "home" },
-	{ name: "Download", href: "/download" },
+	{ name: "Download", href: "/downloadPage" },
 	{ name: "Shop", href: "/shop" },
 ];
 
