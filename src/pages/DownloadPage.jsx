@@ -100,7 +100,7 @@ const DownloadPage = () => {
         <div className="nav-content">
           <div className="nav-menu">
             <a href="/">Home</a>
-            <a href="/download">Download</a>
+            <a href="/downloadPage">Download</a>
             <a href="/shop">Shop</a>
           </div>
         </div>
