@@ -11,6 +11,7 @@ import Navbar from "./components/Navbar";
 import Shop from "./pages/Shop";
 import Login from "./pages/Login";
 import SignIn from "./pages/SignIn";
+import DownloadPage from "./pages/DownloadPage";
 import "./App.css";
 
 import Home from "./pages/Home";
@@ -33,6 +34,7 @@ const App = () => {
 				<Route path="/about" element={<About />} />
 				<Route path="/login" element={<Login />} />
 				<Route path="/signIn" element={<SignIn />} />
+				<Route path="/downloadPage" element={<DownloadPage />} />
 			</Routes>
 		</Router>
 	);
