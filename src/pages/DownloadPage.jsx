@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 import logo from "../assets/wick-logoonly.svg"; // Correct logo import
 import Header from "../components/Header";
-import qrCodeImage from "../assets/qr-code.png"; // Import the QR Code image
+import qrCodeImage from "../assets/appQRCode.png"; // Import the QR Code image
 
 const DownloadPage = () => {
   const navigate = useNavigate(); // Initialize navigate
