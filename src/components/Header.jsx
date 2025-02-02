@@ -12,7 +12,7 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-[#1B1B1B] shadow-md z-50">
+    <header className="fixed top-0 left-0 right-0 bg-[#FFFFFF] shadow-md z-50">
       <div className="w-full max-w-[1200px] mx-auto flex items-center justify-between py-2"> {/* Reduced padding to make header smaller */}
         {/* Mobile Menu Button */}
         <div className="lg:hidden">
