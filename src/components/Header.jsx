@@ -4,8 +4,8 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import logo from "../assets/wick-logoonly.svg";
 
 const navigation = [
-  { name: "Home", href: "/home" },
-  { name: "Shop", href: "/shop" },
+  { name: "HOME", href: "/home" },
+  { name: "SHOP", href: "/shop" },
 ];
 
 const Header = () => {
@@ -30,8 +30,8 @@ const Header = () => {
           {/* Home link */}
           <a
             href={navigation[0].href}
-            className="text-xl text-[#78C288] font-bold hover:text-[#6F6DB2] transition"
-          >
+            className="text-xl text-[#6F6DB2] font-bold hover:text-[#78C288] transition"
+          > 
             {navigation[0].name}
           </a>
 
@@ -47,7 +47,7 @@ const Header = () => {
           {/* Shop link */}
           <a
             href={navigation[1].href}
-            className="text-xl text-[#78C288] font-bold hover:text-[#6F6DB2] transition"
+            className="text-xl text-[#6F6DB2] font-bold hover:text-[#78C288] transition"
           >
             {navigation[1].name}
           </a>
