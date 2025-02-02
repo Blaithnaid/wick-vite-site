@@ -4,12 +4,12 @@ import Header from "../components/Header"; // Header Import
 
 const Shop = () => {
   const products = [
-    { id: 1, name: "Product A", price: "$10", image: "/assets/product1.jpg", buyLink: "https://example.com/productA" },
-    { id: 2, name: "Product B", price: "$20", image: "/assets/product2.jpg", buyLink: "https://example.com/productB" },
-    { id: 3, name: "Product C", price: "$30", image: "/assets/product3.jpg", buyLink: "https://example.com/productC" },
-    { id: 4, name: "Product D", price: "$40", image: "/assets/product4.jpg", buyLink: "https://example.com/productD" },
-    { id: 5, name: "Product E", price: "$50", image: "/assets/product5.jpg", buyLink: "https://example.com/productE" },
-    { id: 6, name: "Product F", price: "$60", image: "/assets/product6.jpg", buyLink: "https://example.com/productF" },
+    { id: 1, name: "Product", price: "$100", image: "/assets/product1.jpg", buyLink: "https://example.com/productA" },
+    { id: 2, name: "Product", price: "$100", image: "/assets/product2.jpg", buyLink: "https://example.com/productB" },
+    { id: 3, name: "Product", price: "$100", image: "/assets/product3.jpg", buyLink: "https://example.com/productC" },
+    { id: 4, name: "Product", price: "$100", image: "/assets/product4.jpg", buyLink: "https://example.com/productD" },
+    { id: 5, name: "Product", price: "$100", image: "/assets/product5.jpg", buyLink: "https://example.com/productE" },
+    { id: 6, name: "Product", price: "$100", image: "/assets/product6.jpg", buyLink: "https://example.com/productF" },
   ];
 
   useEffect(() => {
@@ -72,6 +72,10 @@ const Shop = () => {
     <div className="shop-container">
       <Header /> {/* Header Component */}
       <canvas id="bg-animation"></canvas> {/* Animated Background */}
+
+      {/* Space between Header and Content */}
+      <div className="spacer"></div>
+
       <div className="product-grid">
         {products.map((product) => (
           <div key={product.id} className="product-card">
@@ -104,7 +108,7 @@ const Shop = () => {
             font-family: Arial, sans-serif;
             text-align: center;
             padding: 50px 20px;
-            background-color: #373F51; /* Charcoal Blue */
+            background-color: #FFFFFF; /* Charcoal Blue */
             color: #FFFFFF; /* Snow */
             min-height: 100vh;
             max-width: 1200px;
@@ -112,8 +116,8 @@ const Shop = () => {
           }
 
           /* Space between Header and Shop Content */
-          .shop-container h2 {
-            margin-top: 80px;
+          .spacer {
+            margin-top: 80px; /* Adds space below the header */
           }
 
           /* Title */
@@ -134,7 +138,7 @@ const Shop = () => {
 
           /* Product Card */
           .product-card {
-            background: #1B1B1B; /* Eerie Black */
+            background: #FFFFFF; /* Eerie Black */
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0 6px 12px rgba(111, 109, 178, 0.3);
@@ -162,7 +166,7 @@ const Shop = () => {
             height: 140px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid #78C288; /* Iguana Green */
+            border: 4px solid #1B1B1B; /* Iguana Green */
           }
 
           /* Product Name */
@@ -170,13 +174,13 @@ const Shop = () => {
             font-size: 22px;
             font-weight: bold;
             margin-bottom: 10px;
-            color: #FFFFFF; /* Snow */
+            color: #1B1B1B; /* Snow */
           }
 
           /* Product Price */
           .product-price {
             font-size: 18px;
-            color: #78C288; /* Iguana Green */
+            color: #1B1B1B; /* Iguana Green */
             margin-bottom: 15px;
           }
 
