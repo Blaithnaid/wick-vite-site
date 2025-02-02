@@ -4,125 +4,105 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import logo from "../assets/wick-logoonly.svg";
 
 const navigation = [
-	{ name: "Home", href: "home" },
-	{ name: "Download", href: "/downloadPage" },
-	{ name: "Shop", href: "/shop" },
+  { name: "Home", href: "/home" },
+  { name: "Shop", href: "/shop" },
 ];
 
 const Header = () => {
-	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-	return (
-		<header className="absolute inset-x-0 top-0 z-50">
-			{/* Navbar */}
-			<nav
-				aria-label="Global"
-				className="flex items-center justify-between bg-[#373F51] shadow-md p-6 lg:px-8"
-			>
-				{/* Logo Section */}
-				<div className="flex lg:flex-1">
-					<a href="#" className="-m-1.5 p-1.5">
-						<span className="sr-only">WICK</span>
-						<img
-							alt="WICK Logo"
-							src={logo}
-							className="h-10 w-auto"
-						/>
-					</a>
-				</div>
+  return (
+    <header className="fixed top-0 left-0 right-0 bg-[#1B1B1B] shadow-md z-50">
+      <div className="w-full max-w-[1200px] mx-auto flex items-center justify-between py-2"> {/* Reduced padding to make header smaller */}
+        {/* Mobile Menu Button */}
+        <div className="lg:hidden">
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen(true)}
+            className="text-[#FFFFFF] p-2"
+          >
+            <Bars3Icon className="h-6 w-6" />
+          </button>
+        </div>
 
-				{/* Mobile Menu Button */}
-				<div className="flex lg:hidden">
-					<button
-						type="button"
-						onClick={() => setMobileMenuOpen(true)}
-						className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-[#00FF41]"
-					>
-						<span className="sr-only">Open main menu</span>
-						<Bars3Icon aria-hidden="true" className="h-6 w-6" />
-					</button>
-				</div>
+        {/* Centered Navigation */}
+        <div className="flex-grow flex justify-center items-center space-x-12"> {/* Reduced space between items */}
+          {/* Home link */}
+          <a
+            href={navigation[0].href}
+            className="text-xl text-[#78C288] font-bold hover:text-[#6F6DB2] transition"
+          >
+            {navigation[0].name}
+          </a>
 
-				{/* Desktop Menu */}
-				<div className="hidden lg:flex lg:gap-x-12">
-					{navigation.map((item) => (
-						<a
-							key={item.name}
-							href={item.href}
-							className="text-sm font-semibold text-[#A7A1F2] hover:text-white"
-						>
-							{item.name}
-						</a>
-					))}
-				</div>
+          {/* Logo */}
+          <div className="transform translate-y-4">
+            <img
+              src={logo}
+              alt="WICK Logo"
+              className="h-24 w-auto transition-transform duration-300 hover:scale-200 shadow-lg" // Increased scale to 2x on hover
+            />
+          </div>
 
-				{/* Login Button */}
-				<div className="hidden lg:flex lg:flex-1 lg:justify-end">
-					<a
-						href="/login"
-						className="text-sm font-semibold text-[#A7A1F2] hover:text-white"
-					>
-						Log in <span aria-hidden="true">&rarr;</span>
-					</a>
-				</div>
-			</nav>
+          {/* Shop link */}
+          <a
+            href={navigation[1].href}
+            className="text-xl text-[#78C288] font-bold hover:text-[#6F6DB2] transition"
+          >
+            {navigation[1].name}
+          </a>
+        </div>
 
-			{/* Mobile Menu */}
-			<Dialog
-				open={mobileMenuOpen}
-				onClose={setMobileMenuOpen}
-				className="lg:hidden"
-			>
-				<div className="fixed inset-0 z-50 bg-black opacity-75" />
-				<DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-black px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-[#00FF41]">
-					{/* Mobile Menu Header */}
-					<div className="flex items-center justify-between">
-						<a href="#" className="-m-1.5 p-1.5">
-							<span className="sr-only">WICK</span>
-							<img
-								alt="WICK Logo"
-								src={logo}
-								className="h-8 w-auto"
-							/>
-						</a>
-						<button
-							type="button"
-							onClick={() => setMobileMenuOpen(false)}
-							className="-m-2.5 rounded-md p-2.5 text-[#A7A1F2]"
-						>
-							<span className="sr-only">Close menu</span>
-							<XMarkIcon aria-hidden="true" className="h-6 w-6" />
-						</button>
-					</div>
+        {/* Right Side - Log In Button */}
+        <div className="lg:flex flex-shrink-0">
+          <a
+            href="/login"
+            className="w-10 h-10 flex items-center justify-center rounded-full bg-[#6F6DB2] text-[#FFFFFF] text-sm font-semibold hover:bg-[#78C288] transition"
+          >
+            Log In
+          </a>
+        </div>
+      </div>
 
-					{/* Mobile Menu Links */}
-					<div className="mt-6 flow-root">
-						<div className="-my-6 divide-y divide-[#A7A1F2]">
-							<div className="space-y-2 py-6">
-								{navigation.map((item) => (
-									<a
-										key={item.name}
-										href={item.href}
-										className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-[#A7A1F2] hover:bg-[#111]"
-									>
-										{item.name}
-									</a>
-								))}
-							</div>
-							<div className="py-6">
-								<a
-									href="/login"
-									className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold text-[#00FF41] hover:bg-[#111]"
-								>
-									Log in
-								</a>
-							</div>
-						</div>
-					</div>
-				</DialogPanel>
-			</Dialog>
-		</header>
-	);
+      {/* Mobile Menu */}
+      <Dialog
+        open={mobileMenuOpen}
+        onClose={setMobileMenuOpen}
+        className="lg:hidden"
+      >
+        <div className="fixed inset-0 z-50 bg-black opacity-75" />
+        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-[#1B1B1B] p-6 shadow-lg">
+          <div className="flex items-center justify-between">
+            <img src={logo} alt="WICK Logo" className="h-8 w-auto" />
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-[#FFFFFF]"
+            >
+              <XMarkIcon className="h-6 w-6" />
+            </button>
+          </div>
+          <div className="mt-6 space-y-4">
+            {navigation.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                className="block text-lg text-[#78C288] hover:text-[#6F6DB2] transition"
+              >
+                {item.name}
+              </a>
+            ))}
+            <a
+              href="/login"
+              className="block text-lg text-[#FFFFFF] bg-[#6F6DB2] px-4 py-2 rounded-full text-center hover:bg-[#78C288] transition"
+            >
+              Log In
+            </a>
+          </div>
+        </DialogPanel>
+      </Dialog>
+    </header>
+  );
 };
 
 export default Header;
