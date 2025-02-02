@@ -39,13 +39,13 @@ const Features = () => {
 				{/* Header Section */}
 			{/* Header Section */}
 					<div className="mx-auto max-w-3xl text-center">
-					<h2 className="text-base font-semibold text-[#373f51]">
+					<h2 className="text-base font-semibold text-[#373F51]">
 						Empower Your Workflow
 					</h2>
-					<p className="mt-2 text-4xl font-bold tracking-tight text-[#1B1B1B] sm:text-5xl">
+					<p className="mt-2 text-4xl font-bold tracking-tight text-[#373F51] sm:text-5xl">
 						Features Tailored for Your Success
 					</p>
-					<p className="mt-6 text-lg text-[#00FF41]/90">
+					<p className="mt-6 text-lg text-[#1B1B1B]/90">
 						Streamline your processes with tools designed to simplify and enhance every aspect of your work. From security to storage, we've got you covered.
 					</p>
 					</div>
@@ -88,7 +88,7 @@ const Features = () => {
 										{feature.name}
 									</h3>
 								</div>
-								<p className="mt-4 text-base text-[#00FF41]/80">
+								<p className="mt-4 text-base text-[#1B1B1B]/80">
 									{feature.description}
 								</p>
 							</div>

@@ -159,7 +159,7 @@ const Features = () => {
           <p className="mt-2 text-4xl font-bold tracking-tight text-[#1B1B1B] sm:text-5xl">
             Features Tailored for Your Success
           </p>
-          <p className="mt-6 text-lg text-[#00FF41]/90">
+          <p className="mt-6 text-lg text-[#1B1B1B]/90">
             Streamline your processes with tools designed to simplify and enhance every aspect of your work. From security to storage, we've got you covered.
           </p>
         </div>
@@ -177,8 +177,8 @@ const Features = () => {
                     className="rounded-xl shadow-md w-48 h-48 object-cover"
                   />
                 ) : (
-                  <div className="flex items-center justify-center w-48 h-48 bg-[#121212] rounded-xl border border-[#00FF41]/50">
-                    <span className="text-[#00FF41]">No Image</span>
+                  <div className="flex items-center justify-center w-48 h-48 bg-[#6F6DB2] rounded-xl border border-[#00FF41]/50">
+                    <span className="text-[#6F6DB2]">No Image</span>
                   </div>
                 )}
               </div>
@@ -186,12 +186,12 @@ const Features = () => {
               {/* Feature Details */}
               <div className="mt-6 lg:mt-0 lg:ml-8">
                 <div className="flex items-center">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#00FF41]">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#6F6DB2]">
                     <feature.icon className="h-6 w-6 text-black" aria-hidden="true" />
                   </div>
                   <h3 className="ml-4 text-xl font-bold text-[#1B1B1B]">{feature.name}</h3>
                 </div>
-                <p className="mt-4 text-base text-[#00FF41]/80">{feature.description}</p>
+                <p className="mt-4 text-base text-[#1B1B1B]/80">{feature.description}</p>
               </div>
             </div>
           ))}
