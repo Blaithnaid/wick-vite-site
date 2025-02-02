@@ -36,7 +36,7 @@ const Home = () => {
                     color: "#78C288", // Iguana Green
                   }}
                 >
-                  Our Features
+                 
                 </h2>
                 <p
                   className="text-muted"
@@ -44,12 +44,12 @@ const Home = () => {
                     color: "#6F6DB2", // Dusty Lavender for description text
                   }}
                 >
-                  Discover what it takes to reach the heights of social management.
+                 
                 </p>
               </div>
             </div>
             <div className="row g-4">
-              <Features />
+             
             </div>
           </div>
 

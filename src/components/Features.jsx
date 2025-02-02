@@ -34,22 +34,22 @@ const features = [
 
 const Features = () => {
 	return (
-		<div className="bg-black py-24 sm:py-32">
-			<div className="mx-auto max-w-7xl px-6 lg:px-8">
+		<div className="bg-white min-h-screen flex flex-col justify-center py-24 sm:py-32">
+			<div className="mx-auto max-w-screen-xl px-6 lg:px-8">
 				{/* Header Section */}
-				<div className="mx-auto max-w-2xl lg:text-center">
+			{/* Header Section */}
+					<div className="mx-auto max-w-3xl text-center">
 					<h2 className="text-base font-semibold text-[#373f51]">
 						Empower Your Workflow
 					</h2>
-					<p className="mt-2 text-4xl font-bold tracking-tight text-white sm:text-5xl">
+					<p className="mt-2 text-4xl font-bold tracking-tight text-[#1B1B1B] sm:text-5xl">
 						Features Tailored for Your Success
 					</p>
 					<p className="mt-6 text-lg text-[#00FF41]/90">
-						Streamline your processes with tools designed to
-						simplify and enhance every aspect of your work. From
-						security to storage, we've got you covered.
+						Streamline your processes with tools designed to simplify and enhance every aspect of your work. From security to storage, we've got you covered.
 					</p>
-				</div>
+					</div>
+
 
 				{/* Features Grid */}
 				<div className="mt-16 grid grid-cols-1 gap-y-16 sm:grid-cols-2 lg:grid-cols-2 lg:gap-x-12 lg:gap-y-20">
@@ -84,7 +84,7 @@ const Features = () => {
 											aria-hidden="true"
 										/>
 									</div>
-									<h3 className="ml-4 text-xl font-bold text-white">
+									<h3 className="ml-4 text-xl font-bold text-[#1B1B1B]">
 										{feature.name}
 									</h3>
 								</div>
