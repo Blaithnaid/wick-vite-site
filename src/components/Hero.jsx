@@ -1,4 +1,6 @@
-"use client";
+// Hero.jsx
+
+"use client"; // Ensure the client-side rendering works with React
 
 import { useEffect } from "react";
 import { UserCircleIcon, CloudArrowUpIcon, FingerPrintIcon, LockClosedIcon } from "@heroicons/react/24/outline";
@@ -120,6 +122,17 @@ const Hero = () => {
             className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#1B1B1B] to-[#FFFFFF] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
           />
         </div>
+      </div>
+
+      {/* Insert the Video Here */}
+      <div className="mt-16 text-center">
+        <video
+          className="mt-6 w-full max-w-4xl mx-auto rounded-lg"
+          controls
+        >
+          <source src="https://www.example.com/path-to-your-video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
 
       {/* Features Cards Section */}

@@ -4,24 +4,15 @@ import Header from "../components/Header"; // Import the Header Component
 const Guides = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedGuide, setSelectedGuide] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(0); // Track the current guide index in the carousel
 
   const guides = [
-    { id: 1, name: "Guide 1", image: "/assets/youtube.jpg", description: "Description for Guide 1" },
-
-
-    { id: 2, name: "Guide 2", image: "/assets/guide2.jpg", description: "Description for Guide 2" },
-
-
-    { id: 3, name: "Guide 3", image: "/assets/guide3.jpg", description: "Description for Guide 3" },
-
-
-    { id: 4, name: "Guide 4", image: "/assets/guide4.jpg", description: "Description for Guide 4" },
-
-
-    { id: 5, name: "Guide 5", image: "/assets/guide5.jpg", description: "Description for Guide 5" },
-
-
-    { id: 6, name: "Guide 6", image: "/assets/guide6.jpg", description: "Description for Guide 6" },
+    { id: 1, name: "Guide 1", image: "/src/assets/youtube.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
+    { id: 2, name: "Guide 2", image: "/src/assets/youtube.jpg", description: "Description for Guide 2" },
+    { id: 3, name: "Guide 3", image: "/src/assets/youtube.jpg", description: "Description for Guide 3" },
+    { id: 4, name: "Guide 4", image: "/src/assets/youtube.jpg", description: "Description for Guide 4" },
+    { id: 5, name: "Guide 5", image: "/src/assets/youtube.jpg", description: "Description for Guide 5" },
+    { id: 6, name: "Guide 6", image: "/src/assets/youtube.jpg", description: "Description for Guide 6" },
   ];
 
   const openModal = (guide) => {
@@ -34,8 +25,16 @@ const Guides = () => {
     setSelectedGuide(null);
   };
 
+  const nextGuide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % guides.length);
+  };
+
+  const prevGuide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + guides.length) % guides.length);
+  };
+
   return (
-    <div className="guides-container">
+    <div className={`guides-container ${isModalOpen ? "modal-active" : ""}`}>
       <Header /> {/* Header Component */}
       <canvas id="bg-animation"></canvas> {/* Background Animation */}
 
@@ -44,15 +43,18 @@ const Guides = () => {
 
       <h2 className="guides-title">Guides</h2>
 
-      <div className="guides-grid">
-        {guides.map((guide) => (
-          <div key={guide.id} className="guide-card" onClick={() => openModal(guide)}>
-            <div className="image-container">
-              <img src={guide.image} alt={guide.name} className="guide-image" />
-            </div>
-            <h3 className="guide-name">{guide.name}</h3>
+      {/* Carousel for Guides */}
+      <div className="carousel-container">
+        <button className="carousel-button prev" onClick={prevGuide}>{"<"}</button>
+
+        <div className="carousel-content">
+          <div className="guide-image-container" onClick={() => openModal(guides[currentIndex])}>
+            <img src={guides[currentIndex].image} alt={guides[currentIndex].name} className="guide-image" />
+            <h3 className="guide-name">{guides[currentIndex].name}</h3>
           </div>
-        ))}
+        </div>
+
+        <button className="carousel-button next" onClick={nextGuide}>{">"}</button>
       </div>
 
       {/* Modal Popup */}
@@ -93,9 +95,9 @@ const Guides = () => {
             margin: 0 auto;
           }
 
-          /* Spacer to add space between Header and Content */
+          /* Space between Header and Content */
           .spacer {
-            margin-top: 80px;
+            margin-top: 120px; /* Increased space between header and content */
           }
 
           /* Guides Title */
@@ -103,56 +105,66 @@ const Guides = () => {
             font-size: 36px;
             margin-bottom: 30px;
             text-transform: uppercase;
-            color: #FFFFFF; /* Dusty Lavender */
+            color: #6F6DB2; /* Dusty Lavender */
           }
 
-          /* Guides Grid */
-          .guides-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+          /* Carousel Container */
+          .carousel-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+          }
+
+          .carousel-button {
+            background-color: #6F6DB2;
+            color: white;
+            border: none;
             padding: 20px;
-          }
-
-          /* Guide Card */
-          .guide-card {
-            background: #FFFFFF; /* Eerie Black */
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 6px 12px rgba(111, 109, 178, 0.3);
-            text-align: center;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            font-size: 24px;
             cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 50%;
+            z-index: 10;
           }
 
-          .guide-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(111, 109, 178, 0.5);
+          .carousel-button.prev {
+            left: 20px;
           }
 
-          /* Image Container in Guide Card */
-          .image-container {
+          .carousel-button.next {
+            right: 20px;
+          }
+
+          .carousel-content {
             display: flex;
             justify-content: center;
             align-items: center;
             width: 100%;
-            margin-bottom: 15px;
+            overflow: hidden;
           }
 
-          /* Guide Image - Rounded corners, no circle */
+          .guide-image-container {
+            position: relative;
+            display: inline-block;
+            text-align: center;
+            cursor: pointer;
+          }
+
+          /* Image styling for carousel */
           .guide-image {
             width: 100%;
-            height: 180px;
-            border-radius: 15px;
+            height: 500px; /* Increase the size of the image */
             object-fit: cover;
-            border: 4px solid #1B1B1B; /* Iguana Green */
+            border-radius: 15px;
+            margin-bottom: 10px;
           }
 
-          /* Guide Name */
           .guide-name {
             font-size: 22px;
             font-weight: bold;
-            margin-bottom: 10px;
             color: #1B1B1B; /* Snow */
           }
 
@@ -163,7 +175,7 @@ const Guides = () => {
             left: 0;
             width: 100vw;
             height: 100vh;
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -172,13 +184,14 @@ const Guides = () => {
 
           /* Modal Content */
           .modal-content {
-            background: #373F51; /* Eerie Black */
-            padding: 40px;
+            background: transparent; /* Transparent background for modal */
+            padding: 0; /* Remove padding to make it fit */
             border-radius: 15px;
-            width: 60%;
+            width: 80%; /* Increase width to make it larger */
             max-width: 800px;
             color: #FFFFFF;
             text-align: center;
+            position: relative; /* To position the close button */
           }
 
           /* Close Button */
@@ -190,7 +203,9 @@ const Guides = () => {
             border-radius: 8px;
             font-size: 18px;
             cursor: pointer;
-            margin-bottom: 20px;
+            position: absolute; /* Position absolute to top right */
+            top: 15px;
+            right: 15px;
             transition: background-color 0.3s ease;
           }
 
@@ -201,16 +216,18 @@ const Guides = () => {
           /* Modal Image */
           .modal-guide-image {
             width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-bottom: 20px;
+            height: 100%; /* Make image fill the modal */
+            border-radius: 0; /* Remove border-radius to make the image touch all sides */
+            margin: 0; /* Remove any margin */
+            object-fit: cover; /* Ensure the image fills the space */
           }
 
           /* Modal Guide Name */
           .modal-guide-name {
             font-size: 24px;
             font-weight: bold;
-            margin-bottom: 15px;
+            margin-top: 15px;
+            margin-bottom: 10px;
           }
 
           /* Modal Guide Description */
@@ -219,16 +236,25 @@ const Guides = () => {
             color: #DCDCDC; /* Light Gray */
           }
 
+          /* Hide Header when Modal is Open */
+          .modal-active .guides-container header {
+            display: none; /* Hide the header when the modal is active */
+          }
+
           /* Responsive Design */
           @media (max-width: 1024px) {
-            .guides-grid {
-              grid-template-columns: repeat(2, 1fr);
+            .carousel-container {
+              flex-direction: column;
+            }
+
+            .guide-image {
+              height: 400px; /* Adjust height for smaller screens */
             }
           }
 
           @media (max-width: 768px) {
-            .guides-grid {
-              grid-template-columns: repeat(1, 1fr);
+            .guide-image {
+              height: 300px; /* Further reduce height for mobile screens */
             }
           }
         `}
