@@ -6,11 +6,21 @@ const Guides = () => {
   const [selectedGuide, setSelectedGuide] = useState(null);
 
   const guides = [
-    { id: 1, name: "Guide 1", image: "/assets/guide1.jpg", description: "Description for Guide 1" },
+    { id: 1, name: "Guide 1", image: "/assets/Youtube.jpg", description: "Description for Guide 1" },
+
+
     { id: 2, name: "Guide 2", image: "/assets/guide2.jpg", description: "Description for Guide 2" },
+
+
     { id: 3, name: "Guide 3", image: "/assets/guide3.jpg", description: "Description for Guide 3" },
+
+
     { id: 4, name: "Guide 4", image: "/assets/guide4.jpg", description: "Description for Guide 4" },
+
+
     { id: 5, name: "Guide 5", image: "/assets/guide5.jpg", description: "Description for Guide 5" },
+
+
     { id: 6, name: "Guide 6", image: "/assets/guide6.jpg", description: "Description for Guide 6" },
   ];
 
@@ -93,7 +103,7 @@ const Guides = () => {
             font-size: 36px;
             margin-bottom: 30px;
             text-transform: uppercase;
-            color: #6F6DB2; /* Dusty Lavender */
+            color: #FFFFFF; /* Dusty Lavender */
           }
 
           /* Guides Grid */
@@ -106,7 +116,7 @@ const Guides = () => {
 
           /* Guide Card */
           .guide-card {
-            background: #373F51; /* Eerie Black */
+            background: #FFFFFF; /* Eerie Black */
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0 6px 12px rgba(111, 109, 178, 0.3);
@@ -129,11 +139,11 @@ const Guides = () => {
             margin-bottom: 15px;
           }
 
-          /* Guide Image */
+          /* Guide Image - Rounded corners, no circle */
           .guide-image {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
+            width: 100%;
+            height: 180px;
+            border-radius: 15px;
             object-fit: cover;
             border: 4px solid #1B1B1B; /* Iguana Green */
           }
@@ -143,7 +153,7 @@ const Guides = () => {
             font-size: 22px;
             font-weight: bold;
             margin-bottom: 10px;
-            color: #FFFFFF; /* Snow */
+            color: #1B1B1B; /* Snow */
           }
 
           /* Modal Overlay */
