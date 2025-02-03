@@ -6,7 +6,7 @@ const Guides = () => {
   const [selectedGuide, setSelectedGuide] = useState(null);
 
   const guides = [
-    { id: 1, name: "Guide 1", image: "/assets/Youtube.jpg", description: "Description for Guide 1" },
+    { id: 1, name: "Guide 1", image: "/assets/youtube.jpg", description: "Description for Guide 1" },
 
 
     { id: 2, name: "Guide 2", image: "/assets/guide2.jpg", description: "Description for Guide 2" },
