@@ -34,7 +34,7 @@ const features = [
 
 const Features = () => {
 	return (
-		<div className="bg-white min-h-screen flex flex-col justify-center py-24 sm:py-32">
+		<div className="bg-#6F6DB2 min-h-screen flex flex-col justify-center py-24 sm:py-32">
 			<div className="mx-auto max-w-screen-xl px-6 lg:px-8">
 				{/* Header Section */}
 			{/* Header Section */}
