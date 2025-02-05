@@ -58,9 +58,6 @@ const Hero = () => {
             <a href="#" className="rounded-md bg-[#78C288] px-5 py-3 text-lg font-semibold text-[#1B1B1B] shadow-lg hover:bg-[#00FF41]">
               Download
             </a>
-            <a href="#" className="text-lg font-semibold hover:text-[#FFFFFF]">
-              Learn more <span aria-hidden="true">→</span>
-            </a>
           </div>
         </div>
       </div>

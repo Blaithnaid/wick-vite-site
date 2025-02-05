@@ -38,9 +38,6 @@ const Guides = () => {
       <Header /> {/* Header Component */}
       <canvas id="bg-animation"></canvas> {/* Background Animation */}
 
-      {/* Space between Header and Content */}
-      <div className="spacer"></div>
-
       <div className="content-wrapper">
         {/* Carousel for Guides */}
         <div className="carousel-container">
@@ -81,216 +78,186 @@ const Guides = () => {
 
       <style>
         {`
-          /* Background Animation Canvas */
-          #bg-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: -1;
-          }
-
           /* Guides Container */
-          .guides-container {
-            font-family: Arial, sans-serif;
-            background-color: #FFFFFF; /* Charcoal Blue */
-            color: #FFFFFF; /* Snow */
-            min-height: 100vh;
-            width: 100%; /* Full width */
-            margin: 0;
-            padding: 0; /* Remove padding above */
-          }
+.guides-container {
+  font-family: Arial, sans-serif;
+  background-color: #FFFFFF;
+  color: #FFFFFF;
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0; /* No padding at the top or bottom */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
 
-          /* Space between Header and Content */
-          .spacer {
-            margin-top: 0; /* Remove padding above the guides */
-          }
+/* Content Wrapper */
+.content-wrapper {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: flex-start; /* Align content to the top */
+  width: 100%;
+  gap: 20px; /* Reduce space between carousel and text */
+  padding: 10px 0; /* Reduce padding to avoid extra space */
+  margin-top: 0; /* No extra top margin */
+  margin-bottom: 0; /* No extra bottom margin */
+}
 
-          /* Content Wrapper */
-          .content-wrapper {
-            display: flex;
-            justify-content: center; /* Center the content horizontally */
-            align-items: flex-start;
-            width: 100%; /* Full width */
-            padding: 20px;
-            margin-top: 0; /* No extra space from the top */
-          }
+/* Carousel Container */
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  max-width: 450px; /* Adjust the width */
+  margin-right: 15px; /* Reduce margin */
+}
 
-          /* Carousel Container */
-          .carousel-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            width: 100%;
-            max-width: 350px; /* Size of the carousel */
-            margin-right: 30px; /* Space between carousel and text */
-          }
+/* Carousel Button Styling */
+.carousel-button {
+  background-color: #6F6DB2;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 22px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  z-index: 10;
+}
 
-          .carousel-button {
-            background-color: #6F6DB2;
-            color: white;
-            border: none;
-            padding: 10px;
-            font-size: 18px;
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            border-radius: 50%;
-            z-index: 10;
-          }
+.carousel-button.prev {
+  left: -20px;
+}
 
-          .carousel-button.prev {
-            left: -20px;
-          }
+.carousel-button.next {
+  right: -20px;
+}
 
-          .carousel-button.next {
-            right: -20px;
-          }
+/* Image styling for carousel */
+.guide-image {
+  width: 100%;
+  height: 300px; /* Adjust the image size */
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 5px; /* Smaller space at the bottom */
+}
 
-          .carousel-content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            overflow: hidden;
-          }
+/* Intro Text */
+.intro-text {
+  flex: 1;
+  max-width: 550px; /* Adjust max width */
+}
 
-          .guide-image-container {
-            position: relative;
-            display: inline-block;
-            text-align: center;
-            cursor: pointer;
-          }
+.guides-title {
+  font-size: 28px; /* Smaller title */
+  margin-bottom: 15px; /* Smaller space between title and description */
+  text-transform: uppercase;
+  color: #6F6DB2;
+  font-weight: bold;
+}
 
-          /* Image styling for carousel */
-          .guide-image {
-            width: 100%;
-            height: 250px; /* Smaller size */
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 10px;
-          }
+/* Guides Description */
+.guides-description {
+  font-size: 18px; /* Adjusted font size */
+  color: #1B1B1B;
+  line-height: 1.5;
+}
 
-          .guide-name {
-            font-size: 20px;
-            font-weight: bold;
-            color: #1B1B1B; /* Snow */
-          }
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
 
-          /* Intro Text */
-          .intro-text {
-            flex: 1;
-            max-width: 50%; /* Text takes up half the space */
-          }
+/* Modal Content */
+.modal-content {
+  background: transparent;
+  padding: 0;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 800px;
+  color: #FFFFFF;
+  text-align: center;
+  position: relative;
+}
 
-          /* Guides Title */
-          .guides-title {
-            font-size: 28px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            color: #6F6DB2; /* Dusty Lavender */
-            font-weight: bold;
-          }
+/* Close Button */
+.close-button {
+  background: #6F6DB2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  transition: background-color 0.3s ease;
+}
 
-          /* Guides Description */
-          .guides-description {
-            font-size: 18px;
-            color: #1B1B1B; /* Dusty Charcoal */
-            line-height: 1.6;
-          }
+.close-button:hover {
+  background-color: #78C288;
+}
 
-          /* Modal Overlay */
-          .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-          }
+/* Modal Image */
+.modal-guide-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  margin: 0;
+  object-fit: cover;
+}
 
-          /* Modal Content */
-          .modal-content {
-            background: transparent; /* Transparent background for modal */
-            padding: 0; /* Remove padding to make it fit */
-            border-radius: 15px;
-            width: 80%; /* Increase width to make it larger */
-            max-width: 800px;
-            color: #FFFFFF;
-            text-align: center;
-            position: relative; /* To position the close button */
-          }
+.modal-guide-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
 
-          /* Close Button */
-          .close-button {
-            background: #6F6DB2; /* Dusty Lavender */
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-size: 18px;
-            cursor: pointer;
-            position: absolute; /* Position absolute to top right */
-            top: 15px;
-            right: 15px;
-            transition: background-color 0.3s ease;
-          }
+/* Modal Guide Description */
+.modal-guide-description {
+  font-size: 18px;
+  color: #DCDCDC;
+}
 
-          .close-button:hover {
-            background-color: #78C288; /* Iguana Green */
-          }
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .content-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
 
-          /* Modal Image */
-          .modal-guide-image {
-            width: 100%;
-            height: 100%; /* Make image fill the modal */
-            border-radius: 0; /* Remove border-radius to make the image touch all sides */
-            margin: 0; /* Remove any margin */
-            object-fit: cover; /* Ensure the image fills the space */
-          }
+  .carousel-container {
+    max-width: 400px;
+  }
 
-          /* Modal Guide Name */
-          .modal-guide-name {
-            font-size: 24px;
-            font-weight: bold;
-            margin-top: 15px;
-            margin-bottom: 10px;
-          }
+  .guide-image {
+    height: 250px;
+  }
+}
 
-          /* Modal Guide Description */
-          .modal-guide-description {
-            font-size: 18px;
-            color: #DCDCDC; /* Light Gray */
-          }
+@media (max-width: 768px) {
+  .guide-image {
+    height: 230px;
+  }
+}
 
-          /* Responsive Design */
-          @media (max-width: 1024px) {
-            .content-wrapper {
-              flex-direction: column;
-              align-items: center;
-            }
 
-            .carousel-container {
-              max-width: 400px; /* Slightly increase size on smaller screens */
-            }
-
-            .guide-image {
-              height: 200px; /* Adjust image height for smaller screens */
-            }
-          }
-
-          @media (max-width: 768px) {
-            .guide-image {
-              height: 180px; /* Further reduce height for mobile screens */
-            }
-          }
         `}
       </style>
     </div>
