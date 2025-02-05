@@ -41,20 +41,28 @@ const Guides = () => {
       {/* Space between Header and Content */}
       <div className="spacer"></div>
 
-      <h2 className="guides-title">Guides</h2>
+      <div className="content-wrapper">
+        {/* Carousel for Guides */}
+        <div className="carousel-container">
+          <button className="carousel-button prev" onClick={prevGuide}>{"<"}</button>
 
-      {/* Carousel for Guides */}
-      <div className="carousel-container">
-        <button className="carousel-button prev" onClick={prevGuide}>{"<"}</button>
-
-        <div className="carousel-content">
-          <div className="guide-image-container" onClick={() => openModal(guides[currentIndex])}>
-            <img src={guides[currentIndex].image} alt={guides[currentIndex].name} className="guide-image" />
-            <h3 className="guide-name">{guides[currentIndex].name}</h3>
+          <div className="carousel-content">
+            <div className="guide-image-container" onClick={() => openModal(guides[currentIndex])}>
+              <img src={guides[currentIndex].image} alt={guides[currentIndex].name} className="guide-image" />
+              <h3 className="guide-name">{guides[currentIndex].name}</h3>
+            </div>
           </div>
+
+          <button className="carousel-button next" onClick={nextGuide}>{">"}</button>
         </div>
 
-        <button className="carousel-button next" onClick={nextGuide}>{">"}</button>
+        {/* Title and Description */}
+        <div className="intro-text">
+          <h2 className="guides-title">Guides on start up and current trends</h2>
+          <p className="guides-description">
+            Get insights on the latest trends and startup strategies with our easy-to-follow guides. Perfect for anyone looking to stay ahead in the ever-changing world of business and technology.
+          </p>
+        </div>
       </div>
 
       {/* Modal Popup */}
@@ -86,26 +94,27 @@ const Guides = () => {
           /* Guides Container */
           .guides-container {
             font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px 20px;
             background-color: #FFFFFF; /* Charcoal Blue */
             color: #FFFFFF; /* Snow */
             min-height: 100vh;
-            max-width: 1200px;
-            margin: 0 auto;
+            width: 100%; /* Full width */
+            margin: 0;
+            padding: 0; /* Remove padding above */
           }
 
           /* Space between Header and Content */
           .spacer {
-            margin-top: 120px; /* Increased space between header and content */
+            margin-top: 0; /* Remove padding above the guides */
           }
 
-          /* Guides Title */
-          .guides-title {
-            font-size: 36px;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            color: #6F6DB2; /* Dusty Lavender */
+          /* Content Wrapper */
+          .content-wrapper {
+            display: flex;
+            justify-content: center; /* Center the content horizontally */
+            align-items: flex-start;
+            width: 100%; /* Full width */
+            padding: 20px;
+            margin-top: 0; /* No extra space from the top */
           }
 
           /* Carousel Container */
@@ -114,14 +123,17 @@ const Guides = () => {
             justify-content: center;
             align-items: center;
             position: relative;
+            width: 100%;
+            max-width: 350px; /* Size of the carousel */
+            margin-right: 30px; /* Space between carousel and text */
           }
 
           .carousel-button {
             background-color: #6F6DB2;
             color: white;
             border: none;
-            padding: 20px;
-            font-size: 24px;
+            padding: 10px;
+            font-size: 18px;
             cursor: pointer;
             position: absolute;
             top: 50%;
@@ -131,11 +143,11 @@ const Guides = () => {
           }
 
           .carousel-button.prev {
-            left: 20px;
+            left: -20px;
           }
 
           .carousel-button.next {
-            right: 20px;
+            right: -20px;
           }
 
           .carousel-content {
@@ -156,16 +168,38 @@ const Guides = () => {
           /* Image styling for carousel */
           .guide-image {
             width: 100%;
-            height: 500px; /* Increase the size of the image */
+            height: 250px; /* Smaller size */
             object-fit: cover;
-            border-radius: 15px;
+            border-radius: 10px;
             margin-bottom: 10px;
           }
 
           .guide-name {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: bold;
             color: #1B1B1B; /* Snow */
+          }
+
+          /* Intro Text */
+          .intro-text {
+            flex: 1;
+            max-width: 50%; /* Text takes up half the space */
+          }
+
+          /* Guides Title */
+          .guides-title {
+            font-size: 28px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            color: #6F6DB2; /* Dusty Lavender */
+            font-weight: bold;
+          }
+
+          /* Guides Description */
+          .guides-description {
+            font-size: 18px;
+            color: #1B1B1B; /* Dusty Charcoal */
+            line-height: 1.6;
           }
 
           /* Modal Overlay */
@@ -236,25 +270,25 @@ const Guides = () => {
             color: #DCDCDC; /* Light Gray */
           }
 
-          /* Hide Header when Modal is Open */
-          .modal-active .guides-container header {
-            display: none; /* Hide the header when the modal is active */
-          }
-
           /* Responsive Design */
           @media (max-width: 1024px) {
-            .carousel-container {
+            .content-wrapper {
               flex-direction: column;
+              align-items: center;
+            }
+
+            .carousel-container {
+              max-width: 400px; /* Slightly increase size on smaller screens */
             }
 
             .guide-image {
-              height: 400px; /* Adjust height for smaller screens */
+              height: 200px; /* Adjust image height for smaller screens */
             }
           }
 
           @media (max-width: 768px) {
             .guide-image {
-              height: 300px; /* Further reduce height for mobile screens */
+              height: 180px; /* Further reduce height for mobile screens */
             }
           }
         `}
