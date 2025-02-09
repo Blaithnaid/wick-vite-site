@@ -45,7 +45,7 @@ const Contact = () => {
       <div style={{ flex: 1, marginRight: "30px" }}>
         <h2
           style={{
-            fontSize: "28px",
+            fontSize: "48px", // Increased font size for title
             color: "#1B1B1B",
             marginBottom: "20px",
             textAlign: "left",
@@ -55,7 +55,7 @@ const Contact = () => {
         </h2>
         <p
           style={{
-            fontSize: "16px",
+            fontSize: "24px", // Increased font size for description
             color: "#1B1B1B",
             marginBottom: "20px",
             textAlign: "left",
@@ -160,6 +160,7 @@ const Contact = () => {
               color: "#78C288",
               fontWeight: "bold",
               textAlign: "center",
+              fontSize: "24px", // Larger text for confirmation
             }}
           >
             {formStatus}
@@ -178,7 +179,7 @@ const Contact = () => {
       >
         <h3
           style={{
-            fontSize: "18px", // Smaller title
+            fontSize: "36px", // Larger font size for contact info header
             fontWeight: "bold",
             color: "#1B1B1B",
             textAlign: "left",
@@ -192,7 +193,7 @@ const Contact = () => {
           <li style={{ marginBottom: "10px" }}>
             <small
               style={{
-                fontSize: "10px", // Smaller font size
+                fontSize: "16px", // Larger font size for labels
                 fontWeight: "bold",
                 textTransform: "uppercase",
                 color: "#1B1B1B",
@@ -200,14 +201,14 @@ const Contact = () => {
             >
               Address:
             </small>
-            <p style={{ fontSize: "12px", color: "#1B1B1B", marginTop: "5px" }}>
+            <p style={{ fontSize: "18px", color: "#1B1B1B", marginTop: "5px" }}>
               123 Main Street, Suite 101, City, Country
             </p>
           </li>
           <li style={{ marginBottom: "10px" }}>
             <small
               style={{
-                fontSize: "10px", // Smaller font size
+                fontSize: "16px", // Larger font size for labels
                 fontWeight: "bold",
                 textTransform: "uppercase",
                 color: "#1B1B1B",
@@ -215,14 +216,14 @@ const Contact = () => {
             >
               Email:
             </small>
-            <p style={{ fontSize: "12px", color: "#1B1B1B", marginTop: "5px" }}>
+            <p style={{ fontSize: "18px", color: "#1B1B1B", marginTop: "5px" }}>
               support@yourdomain.com
             </p>
           </li>
           <li style={{ marginBottom: "10px" }}>
             <small
               style={{
-                fontSize: "10px", // Smaller font size
+                fontSize: "16px", // Larger font size for labels
                 fontWeight: "bold",
                 textTransform: "uppercase",
                 color: "#1B1B1B",
@@ -243,7 +244,7 @@ const Contact = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                  fontSize: "12px", // Smaller font size
+                  fontSize: "18px", // Larger font size for social links
                   color: "#3b5998",
                   textDecoration: "none",
                   transition: "color 0.3s ease",
@@ -256,7 +257,7 @@ const Contact = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                  fontSize: "12px", // Smaller font size
+                  fontSize: "18px", // Larger font size for social links
                   color: "#1DA1F2",
                   textDecoration: "none",
                   transition: "color 0.3s ease",
@@ -269,7 +270,7 @@ const Contact = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                  fontSize: "12px", // Smaller font size
+                  fontSize: "18px", // Larger font size for social links
                   color: "#C13584",
                   textDecoration: "none",
                   transition: "color 0.3s ease",

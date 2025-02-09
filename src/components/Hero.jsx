@@ -55,9 +55,6 @@ const Hero = () => {
             Wick brings all of your platforms into one place, making it easier than ever to manage your social media presence.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
-            <a href="#" className="rounded-md bg-[#78C288] px-5 py-3 text-lg font-semibold text-[#1B1B1B] shadow-lg hover:bg-[#00FF41]">
-              Download
-            </a>
           </div>
         </div>
       </div>

@@ -57,7 +57,7 @@ const Header = () => {
         <div className="lg:flex flex-shrink-0">
           <a
             href="/login"
-            className="w-10 h-10 flex items-center justify-center rounded-full bg-[#6F6DB2] text-[#FFFFFF] text-sm font-semibold hover:bg-[#78C288] transition"
+            className="w-32 h-12 flex items-center justify-center rounded-md border-2 border-[#6F6DB2] text-[#6F6DB2] text-sm font-semibold hover:bg-[#6F6DB2] hover:text-white transition"
           >
             Log In
           </a>

@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";  
 import Hero from "../components/Hero";
 import Header from "../components/Header";
-import Guides from "../components/Guides"; // Import the Guides Component
-import Extras from "../components/Extras"; // Import the new Extras component
-import Download from "../components/Download"; // Import the Download component
-import Contact from "../components/Contact"; // Import the Contact component
+// import Guides from "../components/Guides"; // Commented out
+import Extras from "../components/Extras"; 
+import Download from "../components/Download"; 
+import Contact from "../components/Contact"; 
+import CardContainer from "../components/Card"; // Import the Card component
 
 const Home = () => {
   useEffect(() => {
@@ -22,75 +23,88 @@ const Home = () => {
           <Hero />
         </div>
 
-        {/* Guides Section */}
+        {/* Guides Section - Commented Out */}
+        {/*
         <div
           className="w-full"
           style={{
-            backgroundColor: "#F9F9F9", // Light background for guides section
-            color: "#78C288", // Iguana Green for text
-            margin: 0, // Remove margin
-            padding: 0, // Remove padding
+            backgroundColor: "#F9F9F9",
+            color: "#78C288",
+            margin: 0,
+            padding: 0,
           }}
         >
-          <Guides /> {/* Add Guides component here */}
+          <Guides />
+        </div>
+        
+
+        {/* Card Section */}
+        <div
+          className="w-full"
+          style={{
+            backgroundColor: "#FFFFFF",
+            color: "#1F1D42",
+            padding: "40px 0",
+          }}
+        >
+          <CardContainer /> {/* Add CardContainer here */}
         </div>
 
         {/* Extras Section */}
         <div
           className="w-full"
           style={{
-            backgroundColor: "#FFFFFF", // Section background
-            color: "#78C288", // Iguana Green for text
-            margin: 0, // Remove margin
-            padding: 0, // Remove padding
+            backgroundColor: "#FFFFFF",
+            color: "#78C288",
+            margin: 0,
+            padding: 0,
           }}
         >
-          <Extras /> {/* Add Extras component here */}
+          <Extras />
         </div>
 
         {/* Download Section */}
         <div
           className="w-full"
           style={{
-            backgroundColor: "#FFFFFF", // Dark background for download section
-            color: "#6F6DB2", // Matrix green text
-            margin: 0, // Remove margin
-            padding: "40px 0", // Padding for spacing
+            backgroundColor: "#FFFFFF",
+            color: "#6F6DB2",
+            margin: 0,
+            padding: "40px 0",
           }}
         >
-          <Download /> {/* Add the Download component here */}
+          <Download />
         </div>
 
         {/* Contact Section */}
         <div
           className="w-full"
           style={{
-            backgroundColor: "#FFFFFF", // Light background for contact section
-            color: "#373F51", 
-            padding: "40px 0", // Padding for spacing
+            backgroundColor: "#FFFFFF",
+            color: "#373F51",
+            padding: "40px 0",
           }}
         >
-          <Contact /> {/* Add the Contact component here */}
+          <Contact />
         </div>
 
         {/* Footer */}
         <footer
           className="text-center py-3"
           style={{
-            backgroundColor: "#FFFFFF", // Background
-            color: "#1B1B1B", // Iguana Green text
-            margin: 0, // Remove margin
-            padding: 0, // Remove padding
+            backgroundColor: "#FFFFFF",
+            color: "#1B1B1B",
+            margin: 0,
+            padding: 0,
           }}
         >
           <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          marginTop: "30px",
-        }}
-      >
-      </div>
+            style={{
+              display: "flex",
+              justifyContent: "center",
+             
+            }}
+          ></div>
           <p className="mb-0">
             &copy; {new Date().getFullYear()} Wick. All rights reserved.
           </p>
