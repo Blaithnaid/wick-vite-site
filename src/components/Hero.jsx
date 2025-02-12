@@ -44,10 +44,16 @@ const Hero = () => {
     <div className="w-full h-full">
       {/* Hero Section */}
       <div className="relative flex items-center justify-center min-h-screen w-full text-center">
-        <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover -z-10">
-          <source src="https://www.example.com/path-to-your-video.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+      <iframe
+  className="absolute inset-0 w-full h-full object-cover -z-10"
+  src="https://www.youtube.com/embed/PBKvLfUOKaI?autoplay=1&loop=1&mute=1&playlist=PBKvLfUOKaI"
+  frameBorder="0"
+  allow="autoplay; encrypted-media"
+  allowFullScreen
+></iframe>
+
+
+
         <div className="absolute inset-0 bg-black opacity-50 -z-10"></div>
         <div className="w-full text-white px-0">
           <h1 className="text-5xl font-bold tracking-tight sm:text-7xl">Social Media, Simplified.</h1>

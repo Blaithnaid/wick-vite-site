@@ -4,48 +4,132 @@ import Header from "../components/Header";
 const Shop = () => {
   const products = [
     {
-      id: 1,
-      name: "Little Bonsai",
-      price: "$79",
-      image: "https://images.unsplash.com/photo-1520412099551-62b6bafeb5bb?auto=format&fit=crop&w=600&q=80",
-      buyLink: "https://example.com/productA",
+      "id": 1,
+      "name": "Logitech C920 HD Webcam",
+      "price": "€74.26",
+      "image": "https://picsum.photos/400/300?random=1",
+      "buyLink": "https://www.logitech.com/en-us/product/c920-hd-webcam"
     },
     {
-      id: 2,
-      name: "Tropical Leaf",
-      price: "$35",
-      image: "https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=600&q=80",
-      buyLink: "https://example.com/productB",
+      "id": 2,
+      "name": "Razer Seiren X USB Microphone",
+      "price": "€93.06",
+      "image": "https://picsum.photos/400/300?random=2",
+      "buyLink": "https://www.razer.com/streaming/razer-seirens-x"
     },
     {
-      id: 3,
-      name: "Marijuana Chill",
-      price: "$155",
-      image: "https://images.unsplash.com/photo-1525945518069-b924046d1385?auto=format&fit=crop&w=600&q=80",
-      buyLink: "https://example.com/productC",
+      "id": 3,
+      "name": "Elgato Stream Deck",
+      "price": "€140.06",
+      "image": "https://picsum.photos/400/300?random=3",
+      "buyLink": "https://www.elgato.com/en/gaming/stream-deck"
     },
     {
-      id: 4,
-      name: "Product D",
-      price: "$100",
-      image: "https://picsum.photos/400/300?random=4",
-      buyLink: "https://example.com/productD",
+      "id": 4,
+      "name": "Neewer Ring Light Kit",
+      "price": "€65.80",
+      "image": "https://picsum.photos/400/300?random=4",
+      "buyLink": "https://www.neewer.com/products/neewer-18-inch-led-ring-light-kit"
     },
     {
-      id: 5,
-      name: "Product E",
-      price: "$100",
-      image: "https://picsum.photos/400/300?random=5",
-      buyLink: "https://example.com/productE",
+      "id": 5,
+      "name": "Blue Yeti USB Microphone",
+      "price": "€122.20",
+      "image": "https://picsum.photos/400/300?random=5",
+      "buyLink": "https://www.bluemic.com/en-us/products/yeti/"
     },
     {
-      id: 6,
-      name: "Product F",
-      price: "$100",
-      image: "https://picsum.photos/400/300?random=6",
-      buyLink: "https://example.com/productF",
+      "id": 6,
+      "name": "Sony Alpha 7C Camera",
+      "price": "€1694.06",
+      "image": "https://picsum.photos/400/300?random=6",
+      "buyLink": "https://www.sony.com/electronics/interchangeable-lens-cameras/ilce-7c"
     },
-  ];
+    {
+      "id": 7,
+      "name": "GoPro Hero 9 Black",
+      "price": "€375.06",
+      "image": "https://picsum.photos/400/300?random=7",
+      "buyLink": "https://gopro.com/en/us/shop/cameras/hero9-black"
+    },
+    {
+      "id": 8,
+      "name": "Elgato Cam Link 4K",
+      "price": "€122.20",
+      "image": "https://picsum.photos/400/300?random=8",
+      "buyLink": "https://www.elgato.com/en/gaming/cam-link-4k"
+    },
+    {
+      "id": 9,
+      "name": "Green Screen Backdrop",
+      "price": "€47",
+      "image": "https://picsum.photos/400/300?random=9",
+      "buyLink": "https://www.neewer.com/products/9-x-13ft-green-screen-backdrop"
+    },
+    {
+      "id": 10,
+      "name": "Audio-Technica ATH-M50X Headphones",
+      "price": "€141",
+      "image": "https://picsum.photos/400/300?random=10",
+      "buyLink": "https://www.audio-technica.com/en-us/ath-m50x"
+    },
+    {
+      "id": 11,
+      "name": "Logitech G Pro X Gaming Headset",
+      "price": "€121.26",
+      "image": "https://picsum.photos/400/300?random=11",
+      "buyLink": "https://www.logitechg.com/en-us/products/gaming-audio/pro-x-headset.html"
+    },
+    {
+      "id": 12,
+      "name": "Streamlabs OBS",
+      "price": "Free",
+      "image": "https://picsum.photos/400/300?random=12",
+      "buyLink": "https://streamlabs.com/"
+    },
+    {
+      "id": 13,
+      "name": "Elgato Ring Light",
+      "price": "€187.06",
+      "image": "https://picsum.photos/400/300?random=13",
+      "buyLink": "https://www.elgato.com/en/gaming/ring-light"
+    },
+    {
+      "id": 14,
+      "name": "Logitech StreamCam",
+      "price": "€158.46",
+      "image": "https://picsum.photos/400/300?random=14",
+      "buyLink": "https://www.logitech.com/en-us/product/streamcam"
+    },
+    {
+      "id": 15,
+      "name": "Corsair K95 RGB Mechanical Keyboard",
+      "price": "€187.06",
+      "image": "https://picsum.photos/400/300?random=15",
+      "buyLink": "https://www.corsair.com/us/en/Categories/Products/Keyboards/Mechanical-Keyboards/K95-RGB-PRO-SE-Mechanical-Gaming-Keyboard/p/CH-9127415-NA"
+    },
+    {
+      "id": 16,
+      "name": "Elgato Wave 3 Microphone",
+      "price": "€149.46",
+      "image": "https://picsum.photos/400/300?random=16",
+      "buyLink": "https://www.elgato.com/en/gaming/wave-3"
+    },
+    {
+      "id": 17,
+      "name": "Twitch Chatbot (Streamlabs)",
+      "price": "Free",
+      "image": "https://picsum.photos/400/300?random=17",
+      "buyLink": "https://streamlabs.com/chatbot"
+    },
+    {
+      "id": 18,
+      "name": "Customizable Desk (IKEA Bekant)",
+      "price": "€563.46",
+      "image": "https://picsum.photos/400/300?random=18",
+      "buyLink": "https://www.ikea.com/us/en/p/bekant-desk-sit-stand-black-brown-s99378799/"
+    }
+]
 
   return (
     <div className="shop-container">
@@ -129,10 +213,17 @@ const Shop = () => {
             position: absolute;
             top: 55px;
             right: 50px;
-            color: white;
-            font-weight: 200;
-            font-size: 2em;
+            color: #fff; /* White color for better contrast */
+            font-weight: 700; /* Make it bold for more impact */
+            font-size: 2.5em; /* Slightly larger for better visibility */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* 3D shadow effect */
+            text-transform: uppercase; /* Make the price uppercase to add emphasis */
+            letter-spacing: 1px; /* Spacing between letters for a clean look */
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for contrast */
+            padding: 5px 10px; /* Padding to ensure the background doesn't touch the text */
+            border-radius: 5px; /* Rounded corners for the background */
           }
+
 
           .card-back {
             position: absolute;

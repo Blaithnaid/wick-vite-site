@@ -1,57 +1,47 @@
 import React, { useState } from 'react';
 
 // Card component
-const Card = ({ imageSrc, title, description }) => {
+const Card = ({ imageSrc, title, onClick }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const styles = {
     cta: {
-      height: '450px',
-      width: '300px',
+      height: '350px',
+      width: '280px',
       position: 'relative',
       overflow: 'hidden',
-      borderRadius: '25%', // Rounded corners for the card
-      boxShadow: isHovered ? '0 4px 20px rgba(111, 109, 178, 0.7)' : 'none', // Under-glow effect
-      transition: 'all 0.3s ease-in-out', // Smooth transition for hover effect
-    },
-    img: {
-      position: 'absolute',
-      top: '-10%', // Changed this to -10% to make the image come down
-      left: '50%',
-      width: '100%',
-      height: '100%',
-      objectFit: 'cover', // Ensures the image covers the area without distortion
-      transform: 'translateX(-50%)', // Centers the image horizontally
-      transition: '0.5s ease-in-out',
+      borderRadius: '15px',
+      backgroundImage: `url(${imageSrc})`,
+      backgroundSize: 'cover',  // Ensures the image covers the area
+      backgroundPosition: 'center',
+      boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)',
+      cursor: 'pointer',
+      transition: 'all 0.4s ease-in-out',
+      transform: isHovered ? 'scale(1.05) rotate(5deg)' : 'scale(1) rotate(0deg)', // 3D rotation on hover
+      boxShadow: isHovered
+        ? '0 20px 40px rgba(111, 109, 178, 0.8), 0 20px 60px rgba(255, 0, 0, 0.3)' // Dynamic glow effect
+        : '0 10px 20px rgba(0, 0, 0, 0.1)',
     },
     text: {
       position: 'absolute',
-      bottom: '-40%',
-      left: '15px',
-      right: '15px',
+      bottom: '10px',
+      left: '20px',
+      right: '20px',
       padding: '15px',
-      transition: '0.5s ease-in-out',
-      color: '#78C288', // Text color change
-      zIndex: 2, // Ensure text appears above the image when hovered
+      color: '#fff',
+      zIndex: 2,
+      opacity: isHovered ? '1' : '0', // Fade in text on hover
+      transform: isHovered ? 'translateY(0)' : 'translateY(20px)', // Slide in text from bottom
+      transition: 'all 0.4s ease-in-out',
     },
     h2: {
-      color: '#78C288', // Title color
-      display: 'inline-block',
-      fontWeight: 300,
-      marginBottom: '5px',
-    },
-    p: {
-      color: '#78C288', // Description color
-      fontWeight: 300,
-    },
-    ctaHovered: {
-      img: {
-        top: isHovered ? '-20%' : '-10%', // Move the image further down when hovered
-        filter: isHovered ? 'brightness(70%)' : 'brightness(100%)',
-      },
-      text: {
-        bottom: isHovered ? '0' : '-40%', // Moves the text into view on hover
-      },
+      color: '#fff', // White title color
+      fontWeight: 'bold',
+      fontSize: '1.5rem',
+      textTransform: 'uppercase',
+      marginBottom: '10px',
+      letterSpacing: '2px',
+      textShadow: '0 0 5px rgba(255, 255, 255, 0.5)', // Subtle glow effect
     },
   };
 
@@ -60,41 +50,95 @@ const Card = ({ imageSrc, title, description }) => {
       style={styles.cta}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={onClick}
     >
-      <img
-        src={imageSrc}
-        alt="CTA Image"
-        style={{
-          ...styles.img,
-          ...styles.ctaHovered.img,
-        }}
-      />
-      <div
-        style={{
-          ...styles.text,
-          ...styles.ctaHovered.text,
-        }}
-      >
+      <div style={styles.text}>
         <h2 style={styles.h2}>{title}</h2>
-        <p style={styles.p}>{description}</p>
       </div>
     </div>
   );
 };
 
-// Grid component to render multiple cards
+// Modal Popup Component
+const Modal = ({ isOpen, onClose, cardContent }) => {
+  if (!isOpen) return null;
+
+  const modalStyle = {
+    position: 'fixed',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    backgroundColor: '#fff',
+    padding: '30px',
+    borderRadius: '10px',
+    boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
+    zIndex: 1000,
+    maxWidth: '600px',
+    width: '100%',
+    height: 'auto',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  };
+
+  return (
+    <div
+      style={{
+        position: 'fixed',
+        top: '0',
+        left: '0',
+        right: '0',
+        bottom: '0',
+        backgroundColor: 'rgba(0, 0, 0, 0.7)',
+        zIndex: 999,
+      }}
+      onClick={onClose}
+    >
+      <div
+        style={modalStyle}
+        onClick={(e) => e.stopPropagation()} // Prevent clicking on modal content from closing the modal
+      >
+        <h2>{cardContent.title}</h2>
+        <p>{cardContent.description}</p>
+        <img
+          src={cardContent.imageSrc}
+          alt={cardContent.title}
+          style={{ width: '60%', borderRadius: '10px', marginTop: '20px' }}
+        />
+        <button
+          style={{
+            marginTop: '20px',
+            padding: '10px 20px',
+            backgroundColor: '#78C288',
+            color: 'white',
+            border: 'none',
+            borderRadius: '5px',
+            cursor: 'pointer',
+          }}
+          onClick={onClose}
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  );
+};
+
+// CardGrid component
 const CardGrid = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedCard, setSelectedCard] = useState(null);
+
   const gridStyle = {
     display: 'grid',
-    gridTemplateColumns: 'repeat(3, 1fr)',  // 3 cards per row
-    gap: '20px',  // Space between cards
-    justifyItems: 'center',  // Center cards horizontally
-    alignItems: 'center',    // Center cards vertically
-    width: '100%',
+    gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',  // Grid with equal width cards
+    gap: '20px',
+    justifyItems: 'center',
+    alignItems: 'center',
+    padding: '40px',
     maxWidth: '1200px',
   };
 
-  // Data for the cards
   const cardsData = [
     {
       imageSrc: '/src/assets/youtube.jpg',
@@ -127,19 +171,36 @@ const CardGrid = () => {
       description: 'Dive into the ever-evolving TikTok trends, from viral dance challenges to creative short-form videos that keep users entertained.',
     },
   ];
-  
+
+  const handleCardClick = (card) => {
+    setSelectedCard(card);
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+    setSelectedCard(null);
+  };
 
   return (
-    <div style={gridStyle}>
-      {/* Dynamically render the cards */}
-      {cardsData.map((card, index) => (
-        <Card
-          key={index}
-          imageSrc={card.imageSrc}
-          title={card.title}
-          description={card.description}
-        />
-      ))}
+    <div>
+      <div style={gridStyle}>
+        {cardsData.map((card, index) => (
+          <Card
+            key={index}
+            imageSrc={card.imageSrc}
+            title={card.title}
+            onClick={() => handleCardClick(card)} // Handle card click to show modal
+          />
+        ))}
+      </div>
+
+      {/* Modal component */}
+      <Modal
+        isOpen={modalOpen}
+        onClose={handleCloseModal}
+        cardContent={selectedCard || {}}
+      />
     </div>
   );
 };
@@ -148,9 +209,10 @@ const CardGrid = () => {
 const CardContainer = () => {
   const containerStyle = {
     display: 'flex',
-    justifyContent: 'center', // Center horizontally
-    alignItems: 'center',     // Center vertically
-    height: '100vh',          // Full viewport height
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100vh',
+    backgroundColor: '#FFFFFF', // Light gray background for the container
   };
 
   return (
