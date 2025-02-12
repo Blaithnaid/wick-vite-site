@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import logo from "../assets/wick-logoonly.svg"; // Correct logo import
 import Header from "../components/Header";
 
 const SignIn = () => {
+	const [firstName, setFirstName] = useState("");
+	const [lastName, setLastName] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [confirmPassword, setConfirmPassword] = useState("");
-	const navigate = useNavigate(); // React Router's navigation function
+	const navigate = useNavigate();
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -17,237 +18,169 @@ const SignIn = () => {
 			return;
 		}
 
-		console.log("Sign-Up Details:", { email, password });
-		// Simulate sign-up logic
+		console.log("Account Created:", { firstName, lastName, email, password });
+		// Simulate account creation
 		setTimeout(() => {
-			alert("Sign-Up Successful!");
-			navigate("/login"); // Redirect to the Login page
+			alert("Account Successfully Created!");
+			navigate("/home"); // Redirect to home page after successful sign-up
 		}, 1000);
 	};
 
 	return (
-		<div
-			style={{
-				fontFamily: "Arial, sans-serif",
-				minHeight: "100vh",
-				backgroundColor: "#000", // Black background
-				color: "#00FF41", // Matrix green text
-				overflow: "hidden",
-				animation: "fadeIn 1s ease-in-out",
-			}}
-		>
-			{/* CSS Animations */}
-			<style>
-				{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
+		<section className="bg-white">
+			<div className="lg:grid lg:min-h-screen lg:grid-cols-12">
+				<Header /> {/* Header Section */}
 
-        @keyframes slideIn {
-          from {
-            transform: translateY(20px);
-            opacity: 0;
-          }
-          to {
-            transform: translateY(0);
-            opacity: 1;
-          }
-        }
-
-        nav {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          padding: 20px;
-          background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent black */
-          color: #00FF41; /* Matrix green */
-          box-shadow: 0 2px 10px rgba(0, 255, 65, 0.4); /* Glowing shadow */
-        }
-
-        nav img {
-          height: 40px;
-        }
-      `}
-			</style>
-			<Header />
-			{/* Navbar */}
-			<nav>
-				{/* Logo */}
-				<div>
+				<aside className="relative block h-16 lg:order-last lg:col-span-5 lg:h-full xl:col-span-6">
 					<img
-						src={logo}
-						alt="Wick Logo"
-						className="logo"
-						style={{ height: "40px" }}
+						alt=""
+						src="https://images.unsplash.com/photo-1605106702734-205df224ecce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGV8fDB8fHx8&auto=format&fit=crop&w=870&q=80"
+						className="absolute inset-0 h-full w-full object-cover"
 					/>
-				</div>
+				</aside>
 
-				{/* Menu */}
-				<div className="nav-content">
-					<div className="nav-menu">
-						<a href="/">Home</a>
-						<a href="/about">Download</a>
-						<a href="/shop">Shop</a>
+				<main className="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6">
+					<div className="max-w-xl lg:max-w-3xl">
+						<h1 className="mt-6 text-3xl font-bold text-[#373F51] sm:text-4xl md:text-5xl">
+							Create Your Wick Account
+						</h1>
+
+						<p className="mt-4 leading-relaxed text-[#373F51]">
+							Sign up now and start your journey with us!
+						</p>
+
+						<form
+							onSubmit={handleSubmit}
+							className="mt-8 grid grid-cols-6 gap-6"
+						>
+							<div className="col-span-6 sm:col-span-3">
+								<label
+									htmlFor="FirstName"
+									className="block text-lg font-medium text-[#373F51]"
+								>
+									First Name
+								</label>
+								<input
+									type="text"
+									id="FirstName"
+									value={firstName}
+									onChange={(e) => setFirstName(e.target.value)}
+									required
+									className="mt-1 w-full py-3 px-4 rounded-md border-gray-200 bg-[#6F6DB2] text-lg text-[#FFFFFF] shadow-sm"
+								/>
+							</div>
+
+							<div className="col-span-6 sm:col-span-3">
+								<label
+									htmlFor="LastName"
+									className="block text-lg font-medium text-[#373F51]"
+								>
+									Last Name
+								</label>
+								<input
+									type="text"
+									id="LastName"
+									value={lastName}
+									onChange={(e) => setLastName(e.target.value)}
+									required
+									className="mt-1 w-full py-3 px-4 rounded-md border-gray-200 bg-[#6F6DB2] text-lg text-[#FFFFFF] shadow-sm"
+								/>
+							</div>
+
+							<div className="col-span-6">
+								<label
+									htmlFor="Email"
+									className="block text-lg font-medium text-[#373F51]"
+								>
+									Email
+								</label>
+								<input
+									type="email"
+									id="Email"
+									value={email}
+									onChange={(e) => setEmail(e.target.value)}
+									required
+									className="mt-1 w-full py-3 px-4 rounded-md border-gray-200 bg-[#6F6DB2] text-lg text-[#FFFFFF] shadow-sm"
+								/>
+							</div>
+
+							<div className="col-span-6 sm:col-span-3">
+								<label
+									htmlFor="Password"
+									className="block text-lg font-medium text-[#373F51]"
+								>
+									Password
+								</label>
+								<input
+									type="password"
+									id="Password"
+									value={password}
+									onChange={(e) => setPassword(e.target.value)}
+									required
+									className="mt-1 w-full py-3 px-4 rounded-md border-gray-200 bg-[#6F6DB2] text-lg text-[#FFFFFF] shadow-sm"
+								/>
+							</div>
+
+							<div className="col-span-6 sm:col-span-3">
+								<label
+									htmlFor="ConfirmPassword"
+									className="block text-lg font-medium text-[#373F51]"
+								>
+									Confirm Password
+								</label>
+								<input
+									type="password"
+									id="ConfirmPassword"
+									value={confirmPassword}
+									onChange={(e) => setConfirmPassword(e.target.value)}
+									required
+									className="mt-1 w-full py-3 px-4 rounded-md border-gray-200 bg-[#6F6DB2] text-lg text-[#FFFFFF] shadow-sm"
+								/>
+							</div>
+
+							<div className="col-span-6">
+								<label htmlFor="Terms" className="flex gap-4">
+									<input
+										type="checkbox"
+										id="Terms"
+										required
+										className="size-5 rounded-md border-gray-200 bg-[#6F6DB2] shadow-xs"
+									/>
+									<span className="text-lg text-[#373F51]">
+										I agree to the{" "}
+										<a href="#" className="text-[#6F6DB2] underline">
+											terms and conditions
+										</a>{" "}
+										and{" "}
+										<a href="#" className="text-[#6F6DB2] underline">
+											privacy policy
+										</a>
+										.
+									</span>
+								</label>
+							</div>
+
+							<div className="col-span-6 sm:flex sm:items-center sm:gap-4">
+								<button
+									type="submit"
+									className="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-lg font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:ring-3 focus:outline-hidden"
+								>
+									Sign Up
+								</button>
+
+								<p className="mt-4 text-lg text-[#373F51] sm:mt-0">
+									Already have an account?
+									<a href="/login" className="text-[#6F6DB2] underline">
+										Log in
+									</a>
+									.
+								</p>
+							</div>
+						</form>
 					</div>
-				</div>
-			</nav>
-
-			{/* Sign-Up Card */}
-			<div
-				style={{
-					display: "flex",
-					alignItems: "center",
-					justifyContent: "center",
-					minHeight: "calc(100vh - 80px)", // Adjusted to exclude navbar height
-				}}
-			>
-				<div
-					style={{
-						background: "#111", // Slightly lighter black
-						padding: "30px 40px",
-						borderRadius: "10px",
-						boxShadow: "0 10px 30px rgba(0, 255, 65, 0.4)", // Green glowing shadow
-						animation: "slideIn 0.8s ease-in-out",
-						width: "100%",
-						maxWidth: "400px",
-						textAlign: "center",
-					}}
-				>
-					<h2
-						style={{
-							fontSize: "24px",
-							fontWeight: "bold",
-							marginBottom: "20px",
-							color: "#00FF41",
-						}}
-					>
-						Create Your Account
-					</h2>
-					<form onSubmit={handleSubmit}>
-						<div
-							style={{ marginBottom: "20px", textAlign: "left" }}
-						>
-							<label
-								htmlFor="email"
-								style={{
-									display: "block",
-									fontSize: "14px",
-									marginBottom: "5px",
-									color: "#00FF41",
-								}}
-							>
-								Email
-							</label>
-							<input
-								type="email"
-								id="email"
-								value={email}
-								onChange={(e) => setEmail(e.target.value)}
-								required
-								style={{
-									width: "100%",
-									padding: "10px",
-									fontSize: "16px",
-									border: "1px solid #00FF41",
-									borderRadius: "5px",
-									backgroundColor: "#000",
-									color: "#00FF41",
-									transition: "border 0.3s",
-								}}
-							/>
-						</div>
-						<div
-							style={{ marginBottom: "20px", textAlign: "left" }}
-						>
-							<label
-								htmlFor="password"
-								style={{
-									display: "block",
-									fontSize: "14px",
-									marginBottom: "5px",
-									color: "#00FF41",
-								}}
-							>
-								Password
-							</label>
-							<input
-								type="password"
-								id="password"
-								value={password}
-								onChange={(e) => setPassword(e.target.value)}
-								required
-								style={{
-									width: "100%",
-									padding: "10px",
-									fontSize: "16px",
-									border: "1px solid #00FF41",
-									borderRadius: "5px",
-									backgroundColor: "#000",
-									color: "#00FF41",
-									transition: "border 0.3s",
-								}}
-							/>
-						</div>
-						<div
-							style={{ marginBottom: "20px", textAlign: "left" }}
-						>
-							<label
-								htmlFor="confirm-password"
-								style={{
-									display: "block",
-									fontSize: "14px",
-									marginBottom: "5px",
-									color: "#00FF41",
-								}}
-							>
-								Confirm Password
-							</label>
-							<input
-								type="password"
-								id="confirm-password"
-								value={confirmPassword}
-								onChange={(e) =>
-									setConfirmPassword(e.target.value)
-								}
-								required
-								style={{
-									width: "100%",
-									padding: "10px",
-									fontSize: "16px",
-									border: "1px solid #00FF41",
-									borderRadius: "5px",
-									backgroundColor: "#000",
-									color: "#00FF41",
-									transition: "border 0.3s",
-								}}
-							/>
-						</div>
-						<button
-							type="submit"
-							style={{
-								width: "100%",
-								padding: "12px 0",
-								backgroundColor: "#00FF41",
-								border: "none",
-								color: "#000",
-								fontSize: "16px",
-								fontWeight: "bold",
-								borderRadius: "5px",
-								cursor: "pointer",
-								transition: "background-color 0.3s",
-							}}
-						>
-							Sign Up
-						</button>
-					</form>
-				</div>
+				</main>
 			</div>
-		</div>
+		</section>
 	);
 };
 

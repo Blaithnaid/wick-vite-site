@@ -10,7 +10,7 @@ const Card = ({ imageSrc, title, description }) => {
       width: '300px',
       position: 'relative',
       overflow: 'hidden',
-      borderRadius: '8px', // Rounded corners for the card
+      borderRadius: '25%', // Rounded corners for the card
       boxShadow: isHovered ? '0 4px 20px rgba(111, 109, 178, 0.7)' : 'none', // Under-glow effect
       transition: 'all 0.3s ease-in-out', // Smooth transition for hover effect
     },
@@ -18,8 +18,8 @@ const Card = ({ imageSrc, title, description }) => {
       position: 'absolute',
       top: '-10%', // Changed this to -10% to make the image come down
       left: '50%',
-      width: '120%',
-      height: '120%',
+      width: '100%',
+      height: '100%',
       objectFit: 'cover', // Ensures the image covers the area without distortion
       transform: 'translateX(-50%)', // Centers the image horizontally
       transition: '0.5s ease-in-out',
@@ -97,7 +97,7 @@ const CardGrid = () => {
   // Data for the cards
   const cardsData = [
     {
-      imageSrc: 'https://images.pexels.com/photos/6707186/pexels-photo-6707186.jpeg',
+      imageSrc: '/src/assets/youtube.jpg',
       title: 'YouTube Trends',
       description: 'Explore the latest video content and trends that are dominating YouTube, from viral challenges to emerging creators.',
     },

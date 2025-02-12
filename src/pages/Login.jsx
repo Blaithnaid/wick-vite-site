@@ -1,250 +1,126 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
-import logo from "../assets/wick-logoonly.svg"; // Correct logo import
+import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const navigate = useNavigate(); // Initialize navigate
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	const navigate = useNavigate(); // React Router's navigation function
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Login details:", { email, password });
-  };
+	const handleSubmit = (e) => {
+		e.preventDefault();
 
-  const handleSignUp = () => {
-    navigate ("/SignIn"); // Navigate to the Sign-Up page
-  };
+		console.log("Sign-In Details:", { email, password });
+		// Simulate sign-in logic
+		setTimeout(() => {
+			alert("Sign-In Successful!");
+			navigate("/Home"); // Redirect to the Dashboard page
+		}, 1000);
+	};
 
-  return (
-    <div
-      style={{
-        fontFamily: "Arial, sans-serif",
-        minHeight: "100vh",
-        backgroundColor: "#000", // Black background
-        color: "#00FF41", // Matrix green text
-        overflow: "hidden",
-        animation: "fadeIn 1s ease-in-out",
-      }}
-    >
-      {/* CSS Animations */}
-      <style>
-        {`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
+	return (
+		<section className="bg-white">
+			<div className="lg:grid lg:min-h-screen lg:grid-cols-12">
+				<Header /> {/* Header Section */}
 
-        @keyframes slideIn {
-          from {
-            transform: translateY(20px);
-            opacity: 0;
-          }
-          to {
-            transform: translateY(0);
-            opacity: 1;
-          }
-        }
+				<aside className="relative block h-16 lg:order-last lg:col-span-5 lg:h-full xl:col-span-6">
+					<img
+						alt=""
+						src="https://images.unsplash.com/photo-1605106702734-205df224ecce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGV8fDB8fHx8&auto=format&fit=crop&w=870&q=80"
+						className="absolute inset-0 h-full w-full object-cover"
+					/>
+				</aside>
 
-        nav {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: 15px 40px;
-          background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent black */
-          color: #00FF41; /* Matrix green */
-          box-shadow: 0 2px 10px rgba(0, 255, 65, 0.4); /* Glowing shadow */
-        }
+				<main className="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6">
+					<div className="max-w-xl lg:max-w-3xl">
+						<h1 className="mt-6 text-3xl font-bold text-[#373F51] sm:text-4xl md:text-5xl">
+							Welcome Back to Wick
+						</h1>
 
-        .nav-menu {
-          display: flex;
-          justify-content: center;
-          gap: 30px;
-        }
+						<p className="mt-4 leading-relaxed text-[#373F51]">
+							Log in to access your account and explore the best features.
+						</p>
 
-        .nav-menu a {
-          text-decoration: none;
-          color: #00FF41;
-          font-size: 18px;
-          transition: color 0.3s ease-in-out;
-        }
+						<form
+							onSubmit={handleSubmit}
+							className="mt-8 grid grid-cols-6 gap-6"
+						>
+							<div className="col-span-6">
+								<label
+									htmlFor="Email"
+									className="block text-lg font-medium text-[#373F51]"
+								>
+									Email
+								</label>
+								<input
+									type="email"
+									id="Email"
+									value={email}
+									onChange={(e) => setEmail(e.target.value)}
+									required
+									className="mt-1 w-full py-3 px-4 rounded-md border-gray-200 bg-[#6F6DB2] text-lg text-[#FFFFFF] shadow-sm"
+								/>
+							</div>
 
-        .nav-menu a:hover {
-          color: white;
-        }
+							<div className="col-span-6">
+								<label
+									htmlFor="Password"
+									className="block text-lg font-medium text-[#373F51]"
+								>
+									Password
+								</label>
+								<input
+									type="password"
+									id="Password"
+									value={password}
+									onChange={(e) => setPassword(e.target.value)}
+									required
+									className="mt-1 w-full py-3 px-4 rounded-md border-gray-200 bg-[#6F6DB2] text-lg text-[#FFFFFF] shadow-sm"
+								/>
+							</div>
 
-         .nav-content {
-          flex: 1;
-          display: flex;
-          justify-content: center; /* Center the links */
-        }
+							<div className="col-span-6 flex items-center justify-between">
+								<label
+									htmlFor="RememberMe"
+									className="flex items-center gap-2 text-lg text-[#373F51]"
+								>
+									<input
+										type="checkbox"
+										id="RememberMe"
+										className="size-5 rounded-md border-gray-200 bg-[#6F6DB2] shadow-xs"
+									/>
+									Remember me
+								</label>
 
-        .logo {
-          height: 40px;
-        }
-      `}
-      </style>
-      <Header />
-      {/* Navbar */}
-      <nav>
-        {/* Logo */}
-        <div>
-          <img
-            src={logo}
-            alt="Wick Logo"
-            className="logo"
-            style={{ height: "40px" }}
-          />
-        </div>
+								<a
+									href="/forgot-password"
+									className="text-[#6F6DB2] underline"
+								>
+									Forgot Password?
+								</a>
+							</div>
 
-        {/* Menu */}
-        <div className="nav-content">
-          <div className="nav-menu">
-            <a href="/">Home</a>
-            <a href="/about">Download</a>
-            <a href="/shop">Shop</a>
-          </div>
-        </div>
-      </nav>
+							<div className="col-span-6 sm:flex sm:items-center sm:gap-4">
+								<button
+									type="submit"
+									className="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-lg font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:ring-3 focus:outline-hidden"
+								>
+									Log In
+								</button>
 
-      {/* Login Card */}
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          minHeight: "calc(100vh - 80px)", // Adjusted to exclude navbar height
-        }}
-      >
-        <div
-          style={{
-            background: "#111", // Slightly lighter black
-            padding: "30px 40px",
-            borderRadius: "10px",
-            boxShadow: "0 10px 30px rgba(0, 255, 65, 0.4)", // Green glowing shadow
-            animation: "slideIn 0.8s ease-in-out",
-            width: "100%",
-            maxWidth: "400px",
-            textAlign: "center",
-          }}
-        >
-          <h2
-            style={{
-              fontSize: "24px",
-              fontWeight: "bold",
-              marginBottom: "20px",
-              color: "#00FF41",
-            }}
-          >
-            Welcome Back
-          </h2>
-          <form onSubmit={handleSubmit}>
-            <div style={{ marginBottom: "20px", textAlign: "left" }}>
-              <label
-                htmlFor="email"
-                style={{
-                  display: "block",
-                  fontSize: "14px",
-                  marginBottom: "5px",
-                  color: "#00FF41",
-                }}
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                style={{
-                  width: "100%",
-                  padding: "10px",
-                  fontSize: "16px",
-                  border: "1px solid #00FF41",
-                  borderRadius: "5px",
-                  backgroundColor: "#000",
-                  color: "#00FF41",
-                  transition: "border 0.3s",
-                }}
-              />
-            </div>
-            <div style={{ marginBottom: "20px", textAlign: "left" }}>
-              <label
-                htmlFor="password"
-                style={{
-                  display: "block",
-                  fontSize: "14px",
-                  marginBottom: "5px",
-                  color: "#00FF41",
-                }}
-              >
-                Password
-              </label>
-              <input
-                type="password"
-                id="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-                style={{
-                  width: "100%",
-                  padding: "10px",
-                  fontSize: "16px",
-                  border: "1px solid #00FF41",
-                  borderRadius: "5px",
-                  backgroundColor: "#000",
-                  color: "#00FF41",
-                  transition: "border 0.3s",
-                }}
-              />
-            </div>
-            <button
-              type="submit"
-              style={{
-                width: "100%",
-                padding: "12px 0",
-                backgroundColor: "#00FF41",
-                border: "none",
-                color: "#000",
-                fontSize: "16px",
-                fontWeight: "bold",
-                borderRadius: "5px",
-                cursor: "pointer",
-                transition: "background-color 0.3s",
-              }}
-            >
-              Login
-            </button>
-          </form>
-          <button
-            type="button" // Changed to button (not submit) to avoid form submission
-            onClick={handleSignUp} // Call handleSignUp
-            style={{
-              width: "100%",
-              marginTop: "15px",
-              padding: "12px 0",
-              backgroundColor: "#00FF41",
-              border: "none",
-              color: "#000",
-              fontSize: "16px",
-              fontWeight: "bold",
-              borderRadius: "5px",
-              cursor: "pointer",
-              transition: "background-color 0.3s",
-            }}
-          >
-            Sign-Up
-          </button>
-        </div>
-      </div>
-    </div>
-  );
+								<p className="mt-4 text-lg text-[#373F51] sm:mt-0">
+									Don't have an account?
+									<a href="/SignIn" className="text-[#6F6DB2] underline">
+										Sign Up
+									</a>
+								</p>
+							</div>
+						</form>
+					</div>
+				</main>
+			</div>
+		</section>
+	);
 };
 
 export default Login;
