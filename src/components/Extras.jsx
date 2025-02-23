@@ -2,7 +2,10 @@ import {
     CalendarIcon, 
     ChartBarIcon, 
     ChatBubbleLeftIcon, 
-    UsersIcon 
+    UsersIcon,
+    ChartPieIcon,
+    InboxIcon,
+    ClipboardDocumentIcon
   } from "@heroicons/react/24/outline";
   
   // Rename the array to avoid naming conflict
@@ -15,7 +18,7 @@ import {
     {
       name: "Analytics and Insights",
       description: "Monitor social media performance with in-depth analytics and insights to optimize engagement.",
-      icon: ChartBarIcon,
+      icon: ChartPieIcon,
     },
     {
       name: "Brand Monitoring",
@@ -30,12 +33,12 @@ import {
     {
       name: "Customer Engagement",
       description: "Engage with customers by responding to comments, messages, and mentions across all platforms.",
-      icon: ChatBubbleLeftIcon,
+      icon: InboxIcon,
     },
     {
       name: "Automated Reporting",
       description: "Generate custom reports automatically, providing key metrics for performance review and strategy adjustments.",
-      icon: ChatBubbleLeftIcon,
+      icon: ClipboardDocumentIcon,
     },
   ];
   
