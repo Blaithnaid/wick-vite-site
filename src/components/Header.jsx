@@ -12,21 +12,17 @@ const Header = () => {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
 	return (
-		<header className="fixed top-0 left-0 right-0 bg-[#FFFFFF] shadow-md z-50">
+		<header className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
 			<div className="w-full max-w-[1200px] mx-auto flex items-center justify-between py-2">
-				<div className="lg:hidden">
-					<button
-						type="button"
-						onClick={() => setMobileMenuOpen(true)}
-						className="text-[#FFFFFF] p-2"
-					>
+				<div className="lg:hidden text-white h-12 w-12 flex justify-center align-center">
+					<button type="button" onClick={() => setMobileMenuOpen(true)}>
 						<Bars3Icon className="h-6 w-6" />
 					</button>
 				</div>
 				<div className="flex-grow flex justify-center items-center space-x-12">
 					<a
 						href={navigation[0].href}
-						className="text-xl text-[#6F6DB2] font-bold hover:text-[#78C288] transition"
+						className="text-xl text-lavender-400 font-bold hover:text-iguana-400 transition"
 					>
 						{navigation[0].name}
 					</a>
@@ -37,7 +33,7 @@ const Header = () => {
 					/>
 					<a
 						href={navigation[1].href}
-						className="text-xl text-[#6F6DB2] font-bold hover:text-[#78C288] transition"
+						className="text-xl text-lavender-400 font-bold hover:text-iguana-400 transition"
 					>
 						{navigation[1].name}
 					</a>
@@ -45,7 +41,7 @@ const Header = () => {
 				<div className="lg:flex flex-shrink-0">
 					<a
 						href="/login"
-						className="w-32 h-12 flex items-center justify-center rounded-md border-2 border-[#6F6DB2] text-[#6F6DB2] text-sm font-semibold hover:bg-[#6F6DB2] hover:text-white transition"
+						className="w-32 h-12 flex items-center justify-center rounded-md text-sm font-semibold bg-lavender-400 hover:bg-[] text-white hover:text-black transition"
 					>
 						Log In
 					</a>
@@ -59,11 +55,11 @@ const Header = () => {
 				<div className="fixed inset-0 z-50 bg-black opacity-75" />
 				<DialogPanel className="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-[#1B1B1B] p-6 shadow-lg">
 					<div className="flex items-center justify-between">
-						<img src={logo} alt="WICK Logo" className="h-8 w-auto" />
+						<img src={logo} alt="Logo" className="h-8 w-auto" />
 						<button
 							type="button"
 							onClick={() => setMobileMenuOpen(false)}
-							className="text-[#FFFFFF]"
+							className="text-white"
 						>
 							<XMarkIcon className="h-6 w-6" />
 						</button>
@@ -73,14 +69,14 @@ const Header = () => {
 							<a
 								key={item.name}
 								href={item.href}
-								className="block text-lg text-[#78C288] hover:text-[#6F6DB2] transition"
+								className="block text-lg text-iguana-400 hover:text-lavender-400 transition"
 							>
 								{item.name}
 							</a>
 						))}
 						<a
 							href="/login"
-							className="block text-lg text-[#FFFFFF] bg-[#6F6DB2] px-4 py-2 rounded-full text-center hover:bg-[#78C288] transition"
+							className="block text-lg text-white bg-lavender-400 px-4 py-2 rounded-full text-center hover:bg-iguana-400 transition"
 						>
 							Log In
 						</a>
