@@ -49,13 +49,15 @@ const Hero = () => {
 		<div className="w-full h-full">
 			{/* Hero Section */}
 			<div className="relative flex items-center justify-center min-h-screen w-full text-center">
-				<video
+			<iframe
+					src="https://www.youtube.com/embed/SG03JXX1t1I?autoplay=1&mute=1&loop=1&playlist=SG03JXX1t1I"
 					className="absolute inset-0 w-full h-full object-cover -z-10 blur-sm"
-					src="/office.mp4"
-					autoPlay
-					muted
-					loop
+					frameBorder="0"
+					allow="autoplay; encrypted-media"
+					allowFullScreen
+					title="YouTube background"
 				/>
+
 				<div className="absolute inset-0 bg-black opacity-50 -z-10"></div>
 				<div className="w-full text-white px-0">
 					<h1 className="text-5xl font-bold tracking-tight sm:text-7xl">
