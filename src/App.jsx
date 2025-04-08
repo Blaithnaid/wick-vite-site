@@ -9,6 +9,7 @@ import Shop from "./pages/Shop";
 import Login from "./pages/Login";
 import SignIn from "./pages/SignIn";
 import DownloadPage from "./pages/DownloadPage";
+import loggedinPage from "./pages/loggedinPage";
 import "./App.css";
 
 import Home from "./pages/Home";
@@ -22,6 +23,7 @@ const App = () => {
 				<Route path="/login" element={<Login />} />
 				<Route path="/signIn" element={<SignIn />} />
 				<Route path="/downloadPage" element={<DownloadPage />} />
+				<Route path="/loggedinPage" element={<loggedinPage />} />
 			</Routes>
 		</Router>
 	);

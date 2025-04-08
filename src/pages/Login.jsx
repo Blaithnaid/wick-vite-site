@@ -5,23 +5,24 @@ import Header from "../components/Header";
 const Login = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-	const navigate = useNavigate(); // React Router's navigation function
+	const navigate = useNavigate();
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
 		console.log("Sign-In Details:", { email, password });
-		// Simulate sign-in logic
+
+		// Simulate successful login
 		setTimeout(() => {
 			alert("Sign-In Successful!");
-			navigate("/Home"); // Redirect to the Dashboard page
+			navigate("/loggedinPage"); // ✅ redirect to loggedinPage.jsx
 		}, 1000);
 	};
 
 	return (
 		<section className="bg-white">
 			<div className="lg:grid lg:min-h-screen lg:grid-cols-12">
-				<Header /> {/* Header Section */}
+				<Header />
 
 				<aside className="relative block h-16 lg:order-last lg:col-span-5 lg:h-full xl:col-span-6">
 					<img
