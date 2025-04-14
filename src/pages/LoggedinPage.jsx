@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import Hero from "../components/Hero";
-import Header from "../components/Header";
+import Header2 from "../components/Header2";
 // import Guides from "../components/Guides"; // Commented out
 import Extras from "../components/Extras";
 import Download from "../components/Download";
 import Contact from "../components/Contact";
 import CardContainer from "../components/Card"; // Import the Card component
+import Account from "./Account";
 
 const Home2 = () => {
     useEffect(() => {
@@ -14,7 +15,7 @@ const Home2 = () => {
 
     return (
         <>
-            <Header />
+            <Header2 />
             <div className="relative z-10">
                 <div className="w-full text-center" style={{ margin: 0, padding: 0 }}>
                     <Hero />

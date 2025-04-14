@@ -10,6 +10,9 @@ import Login from "./pages/Login";
 import SignIn from "./pages/SignIn";
 import DownloadPage from "./pages/DownloadPage";
 import LoggedinPage from "./pages/LoggedinPage";
+import Account from "./pages/Account";
+import Shop2 from "./pages/Shop2";
+import Home2 from "./pages/Home2";
 import "./App.css";
 
 import Home from "./pages/Home";
@@ -24,6 +27,9 @@ const App = () => {
 				<Route path="/signIn" element={<SignIn />} />
 				<Route path="/downloadPage" element={<DownloadPage />} />
 				<Route path="/loggedinPage" element={<LoggedinPage />} />
+				<Route path="/account" element={<Account />} />
+				<Route path="/shop2" element={<Shop2/>} />
+				<Route path="/home2" element={<Home2/>} />
 			</Routes>
 		</Router>
 	);
