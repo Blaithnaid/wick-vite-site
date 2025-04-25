@@ -49,13 +49,12 @@ const Hero = () => {
 		<div className="w-full h-full">
 			{/* Hero Section */}
 			<div className="relative flex items-center justify-center min-h-screen w-full text-center">
-			<iframe
-					src="https://www.youtube.com/embed/SG03JXX1t1I?autoplay=1&mute=1&loop=1&playlist=SG03JXX1t1I"
+				<video
+					src="ad.mp4"
 					className="absolute inset-0 w-full h-full object-cover -z-10 blur-sm"
-					frameBorder="0"
-					allow="autoplay; encrypted-media"
-					allowFullScreen
-					title="YouTube background"
+					autoPlay
+					muted
+					loop
 				/>
 
 				<div className="absolute inset-0 bg-black opacity-50 -z-10"></div>
@@ -63,10 +62,16 @@ const Hero = () => {
 					<h1 className="text-5xl font-bold tracking-tight sm:text-7xl">
 						Social Media, Simplified.
 					</h1>
-					<p className="mt-8 text-lg font-medium sm:text-xl">
+					<p className="mt-8 mb-16 text-lg font-medium sm:text-xl">
 						Wick brings all of your platforms into one place, making it easier
 						than ever to manage your social media presence.
 					</p>
+					<a
+						className="text-md p-4 font-bold text-white border-white rounded-lg hover:border-gray-500 hover:text-white bg-iguana-500 hover:bg-iguana-600"
+						href="https://www.youtube.com/watch?v=SG03JXX1t1I"
+					>
+						Watch this video to find out more!
+					</a>
 					<div className="mt-10 flex items-center justify-center gap-x-6"></div>
 				</div>
 			</div>
