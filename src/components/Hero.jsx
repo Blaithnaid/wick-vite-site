@@ -59,10 +59,10 @@ const Hero = () => {
 
 				<div className="absolute inset-0 bg-black opacity-50 -z-10"></div>
 				<div className="w-full text-white px-0">
-					<h1 className="text-5xl font-bold tracking-tight sm:text-7xl">
+					<h1 className="text-5xl px-4 font-bold tracking-tight sm:text-7xl">
 						Social Media, Simplified.
 					</h1>
-					<p className="mt-8 mb-16 text-lg font-medium sm:text-xl">
+					<p className="mt-8 mb-16 px-6 text-lg font-medium sm:text-xl">
 						Wick brings all of your platforms into one place, making it easier
 						than ever to manage your social media presence.
 					</p>
@@ -106,14 +106,14 @@ const Features = () => {
 						>
 							<div className="transition-transform duration-300 ease-in-out transform hover:scale-110">
 								<feature.icon
-									className="h-12 w-12 text-black hover:text-[#78C288]"
+									className="h-12 w-12 text-white hover:text-[#78C288]"
 									aria-hidden="true"
 								/>
 							</div>
-							<h3 className="mt-4 text-xl font-bold text-[#1B1B1B]">
+							<h3 className="mt-4 text-xl font-extrabold text-gray-200">
 								{feature.name}
 							</h3>
-							<p className="mt-2 text-base text-[#1B1B1B]/80">
+							<p className="mt-2 text-base text-gray-300">
 								{feature.description}
 							</p>
 						</div>
