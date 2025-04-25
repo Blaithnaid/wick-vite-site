@@ -202,7 +202,7 @@ const Contact = () => {
               Address:
             </small>
             <p style={{ fontSize: "18px", color: "#1B1B1B", marginTop: "5px" }}>
-              123 Main Street, Suite 101, City, Country
+            Atlantic Technological University - Galway City, Dublin Road, Galway Galway H91 T8NW
             </p>
           </li>
           <li style={{ marginBottom: "10px" }}>
@@ -217,7 +217,7 @@ const Contact = () => {
               Email:
             </small>
             <p style={{ fontSize: "18px", color: "#1B1B1B", marginTop: "5px" }}>
-              support@yourdomain.com
+              g00412669@atu.ie
             </p>
           </li>
           <li style={{ marginBottom: "10px" }}>

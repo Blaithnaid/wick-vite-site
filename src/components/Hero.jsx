@@ -80,13 +80,13 @@ const Features = () => {
 		<div className="bg-[#6F6DB2] py-24 sm:py-32 w-full">
 			<div className="w-full">
 				<div className="text-center">
-					<h2 className="text-base font-semibold text-[#373f51]">
+					<h2 className="text-base font-semibold text-[#FFFFFF]">
 						Empower Your Workflow
 					</h2>
-					<p className="mt-2 text-4xl font-bold tracking-tight text-[#1B1B1B] sm:text-5xl">
+					<p className="mt-2 text-4xl font-bold tracking-tight text-[#FFFFFF] sm:text-5xl">
 						Features Tailored for Your Success
 					</p>
-					<p className="mt-6 text-lg text-[#1B1B1B]/90">
+					<p className="mt-6 text-lg text-[#FFFFFF]/90">
 						Streamline your processes with tools designed to simplify and
 						enhance every aspect of your work.
 					</p>
