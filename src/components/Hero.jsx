@@ -82,7 +82,7 @@ const Hero = () => {
 
 const Features = () => {
 	return (
-		<div className="bg-[#6F6DB2] py-24 sm:py-32 w-full">
+		<div className="bg-[#6F6DB2] md:px-16 px-8 py-24 sm:py-32 w-full">
 			<div className="w-full">
 				<div className="text-center">
 					<h2 className="text-base font-semibold text-[#FFFFFF]">
