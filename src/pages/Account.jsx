@@ -138,7 +138,7 @@ const Profile = () => {
             <Line type="monotone" dataKey="likes" stroke="#ec4899" />
           </LineChart>
         </ResponsiveContainer>
-      </div>
+      </div> 
 
       {/* Stat Cards Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-12">
