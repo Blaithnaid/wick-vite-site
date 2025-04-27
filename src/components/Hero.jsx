@@ -6,6 +6,7 @@ import {
 	FingerPrintIcon,
 	LockClosedIcon,
 } from "@heroicons/react/24/outline";
+import { motion } from "framer-motion";
 
 const features = [
 	{
@@ -49,7 +50,7 @@ const Hero = () => {
 		<div className="w-full h-full">
 			{/* Hero Section */}
 			<div className="relative flex items-center justify-center min-h-screen w-full text-center">
-			<iframe
+				<iframe
 					src="https://www.youtube.com/embed/SG03JXX1t1I?autoplay=1&mute=1&loop=1&playlist=SG03JXX1t1I"
 					className="absolute inset-0 w-full h-full object-cover -z-10 blur-sm"
 					frameBorder="0"
@@ -57,17 +58,22 @@ const Hero = () => {
 					allowFullScreen
 					title="YouTube background"
 				/>
-
 				<div className="absolute inset-0 bg-black opacity-50 -z-10"></div>
 				<div className="w-full text-white px-0">
-					<h1 className="text-5xl font-bold tracking-tight sm:text-7xl">
-						Social Media, Simplified.
-					</h1>
-					<p className="mt-8 text-lg font-medium sm:text-xl">
-						Wick brings all of your platforms into one place, making it easier
-						than ever to manage your social media presence.
-					</p>
-					<div className="mt-10 flex items-center justify-center gap-x-6"></div>
+					<motion.div
+						initial={{ opacity: 0, y: 50 }}
+						animate={{ opacity: 1, y: 0 }}
+						exit={{ opacity: 0 }}
+						transition={{ duration: 1 }}
+					>
+						<h1 className="text-5xl font-bold tracking-tight sm:text-7xl">
+							Social Media, Simplified.
+						</h1>
+						<p className="mt-8 text-lg font-medium sm:text-xl">
+							Wick brings all of your platforms into one place, making it easier
+							than ever to manage your social media presence.
+						</p>
+					</motion.div>
 				</div>
 			</div>
 			<Features />
@@ -114,6 +120,27 @@ const Features = () => {
 						</div>
 					))}
 				</div>
+
+				{/* New Features Announcement */}
+				<motion.div
+					initial={{ opacity: 0, scale: 0.8 }}
+					whileInView={{ opacity: 1, scale: 1 }}
+					transition={{ duration: 0.8, ease: "easeOut" }}
+					className="mt-24 text-center"
+				>
+					<h3 className="text-3xl font-extrabold text-white mb-6">
+					  New Features Dropping Soon!
+					</h3>
+					<p className="text-lg text-white/80 mb-8">
+						We're working on exciting updates to supercharge your experience.
+						Stay tuned!
+					</p>
+					<a href="/feature" className="inline-block">
+						<button className="bg-white text-[#6F6DB2] font-semibold px-6 py-3 rounded-full hover:bg-[#78C288] hover:text-white transition-all duration-300">
+							See Upcoming Features
+						</button>
+					</a>
+				</motion.div>
 			</div>
 		</div>
 	);

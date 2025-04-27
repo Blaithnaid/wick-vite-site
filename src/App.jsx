@@ -12,6 +12,7 @@ import DownloadPage from "./pages/DownloadPage";
 import LoggedinPage from "./pages/LoggedinPage";
 import Account from "./pages/Account";
 import Shop2 from "./pages/Shop2";
+import Feature from "./pages/Feature";
 
 import "./App.css";
 
@@ -29,6 +30,7 @@ const App = () => {
 				<Route path="/loggedinPage" element={<LoggedinPage />} />
 				<Route path="/account" element={<Account />} />
 				<Route path="/shop2" element={<Shop2 />} />
+				<Route path="/feature" element={<Feature />} />
 			</Routes>
 		</Router>
 	);
