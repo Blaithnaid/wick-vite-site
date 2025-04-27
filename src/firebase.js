@@ -1,16 +1,18 @@
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
 
-import {  initializeApp } from "firebase/app";
-import { getfirestrore } from "firebase/firestore";
-
-
-const firebaseConfig = {    
-    apiKey: "AIzaSyD1J9Q",
-    authDomain: "myapp.firebaseapp.com",
-    projectId: "myapp",
-    storageBucket: "myapp.appspot.com",
-    messagingSenderId: "12345",
-    appId: "1:12345:web:6789",
+const firebaseConfig = {
+	apiKey: "AIzaSyBHuRAOylspqxJ_EIMnVG5AoNtRoNp86PU",
+	authDomain: "wick-232f0.firebaseapp.com",
+	projectId: "wick-232f0",
+	storageBucket: "wick-232f0.firebasestorage.app",
+	messagingSenderId: "73405681834",
+	appId: "1:73405681834:web:7b7f6bc9a7c7219a7b40d3",
+	measurementId: "G-EL9Z718383",
 };
 
 const app = initializeApp(firebaseConfig);
-const firebase = getfirestrore(app);
+export const db = getFirestore(app);
+export const auth = getAuth(app);
+export default app;

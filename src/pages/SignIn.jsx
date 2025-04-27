@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
+import { useAuth } from "../contexts/AuthContext";
 
 const SignIn = () => {
 	const [firstName, setFirstName] = useState("");
@@ -8,29 +9,44 @@ const SignIn = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [confirmPassword, setConfirmPassword] = useState("");
+	const [error, setError] = useState("");
+	const [loading, setLoading] = useState(false);
 	const navigate = useNavigate();
+	const { signup, updateUserProfile } = useAuth();
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
 
 		if (password !== confirmPassword) {
-			alert("Passwords do not match!");
-			return;
+			return setError("Passwords do not match!");
 		}
 
-		console.log("Account Created:", { firstName, lastName, email, password });
-		// Simulate account creation
-		setTimeout(() => {
-			alert("Account Successfully Created!");
-			navigate("/home"); // Redirect to home page after successful sign-up
-		}, 1000);
+		try {
+			setError("");
+			setLoading(true);
+
+			// Create user in Firebase
+			const { user } = await signup(email, password);
+
+			// Update profile with name
+			await updateUserProfile(user, {
+				displayName: `${firstName} ${lastName}`,
+			});
+
+			// Navigate to logged in page after successful signup
+			navigate("/loggedinPage", { state: { email } });
+		} catch (error) {
+			setError("Failed to create an account: " + error.message);
+			console.error(error);
+		} finally {
+			setLoading(false);
+		}
 	};
 
 	return (
 		<section className="bg-white">
 			<div className="lg:grid lg:min-h-screen lg:grid-cols-12">
 				<Header /> {/* Header Section */}
-
 				<aside className="relative block h-16 lg:order-last lg:col-span-5 lg:h-full xl:col-span-6">
 					<img
 						alt=""
@@ -38,7 +54,6 @@ const SignIn = () => {
 						className="absolute inset-0 h-full w-full object-cover"
 					/>
 				</aside>
-
 				<main className="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6">
 					<div className="max-w-xl lg:max-w-3xl">
 						<h1 className="mt-6 text-3xl font-bold text-[#373F51] sm:text-4xl md:text-5xl">
@@ -48,6 +63,12 @@ const SignIn = () => {
 						<p className="mt-4 leading-relaxed text-[#373F51]">
 							Sign up now and start your journey with us!
 						</p>
+
+						{error && (
+							<div className="mt-4 p-3 bg-red-100 text-red-700 border border-red-200 rounded-md">
+								{error}
+							</div>
+						)}
 
 						<form
 							onSubmit={handleSubmit}
@@ -64,7 +85,9 @@ const SignIn = () => {
 									type="text"
 									id="FirstName"
 									value={firstName}
-									onChange={(e) => setFirstName(e.target.value)}
+									onChange={(e) =>
+										setFirstName(e.target.value)
+									}
 									required
 									className="mt-1 w-full py-3 px-4 rounded-md border-gray-200 bg-[#6F6DB2] text-lg text-[#FFFFFF] shadow-sm"
 								/>
@@ -81,7 +104,9 @@ const SignIn = () => {
 									type="text"
 									id="LastName"
 									value={lastName}
-									onChange={(e) => setLastName(e.target.value)}
+									onChange={(e) =>
+										setLastName(e.target.value)
+									}
 									required
 									className="mt-1 w-full py-3 px-4 rounded-md border-gray-200 bg-[#6F6DB2] text-lg text-[#FFFFFF] shadow-sm"
 								/>
@@ -115,7 +140,9 @@ const SignIn = () => {
 									type="password"
 									id="Password"
 									value={password}
-									onChange={(e) => setPassword(e.target.value)}
+									onChange={(e) =>
+										setPassword(e.target.value)
+									}
 									required
 									className="mt-1 w-full py-3 px-4 rounded-md border-gray-200 bg-[#6F6DB2] text-lg text-[#FFFFFF] shadow-sm"
 								/>
@@ -132,7 +159,9 @@ const SignIn = () => {
 									type="password"
 									id="ConfirmPassword"
 									value={confirmPassword}
-									onChange={(e) => setConfirmPassword(e.target.value)}
+									onChange={(e) =>
+										setConfirmPassword(e.target.value)
+									}
 									required
 									className="mt-1 w-full py-3 px-4 rounded-md border-gray-200 bg-[#6F6DB2] text-lg text-[#FFFFFF] shadow-sm"
 								/>
@@ -148,11 +177,17 @@ const SignIn = () => {
 									/>
 									<span className="text-lg text-[#373F51]">
 										I agree to the{" "}
-										<a href="#" className="text-[#6F6DB2] underline">
+										<a
+											href="#"
+											className="text-[#6F6DB2] underline"
+										>
 											terms and conditions
 										</a>{" "}
 										and{" "}
-										<a href="#" className="text-[#6F6DB2] underline">
+										<a
+											href="#"
+											className="text-[#6F6DB2] underline"
+										>
 											privacy policy
 										</a>
 										.
@@ -163,14 +198,20 @@ const SignIn = () => {
 							<div className="col-span-6 sm:flex sm:items-center sm:gap-4">
 								<button
 									type="submit"
-									className="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-lg font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:ring-3 focus:outline-hidden"
+									disabled={loading}
+									className="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-lg font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:ring-3 focus:outline-hidden disabled:opacity-70"
 								>
-									Sign Up
+									{loading
+										? "Creating Account..."
+										: "Sign Up"}
 								</button>
 
 								<p className="mt-4 text-lg text-[#373F51] sm:mt-0">
 									Already have an account?
-									<a href="/login" className="text-[#6F6DB2] underline">
+									<a
+										href="/login"
+										className="text-[#6F6DB2] underline"
+									>
 										Log in
 									</a>
 									.
