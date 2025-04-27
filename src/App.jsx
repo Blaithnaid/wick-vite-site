@@ -11,6 +11,7 @@ import SignIn from "./pages/SignIn";
 import DownloadPage from "./pages/DownloadPage";
 import LoggedinPage from "./pages/LoggedinPage";
 import Account from "./pages/Account";
+import Feature from "./pages/Feature";
 
 import "./App.css";
 

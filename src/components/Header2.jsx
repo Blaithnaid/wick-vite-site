@@ -14,7 +14,7 @@ const Header2 = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [profilePic, setProfilePic] = useState(defaultProfilePic); // Default profile picture state
   const location = useLocation(); // Get location from the router
-  const email = location.state?.email || "Guest"; // Use the email passed via state or fallback to "Guest"
+  const email = location.state?.email || ""; // Use the email passed via state or fallback to "Guest"
   const [isUploading, setIsUploading] = useState(false); // State to handle upload status
 
   // Handle profile picture change
