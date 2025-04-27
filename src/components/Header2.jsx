@@ -6,8 +6,8 @@ import logo from "/favicon.svg";
 import defaultProfilePic from "../assets/defaultProfile.jpg"; // Default profile picture
 
 const navigation = [
-  { name: "Home", href: "/home" },
-  { name: "Shop", href: "/shop" },
+  { name: "Home", href: "/loggedinPage" },
+  { name: "Shop", href: "/shop2" },
 ];
 
 const Header2 = () => {
