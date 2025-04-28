@@ -53,7 +53,7 @@ const Profile = () => {
 
 	const navigate = useNavigate(); // Initialize navigate function for routing
 
-	// Simulate data fetch and profile state
+	
 	useEffect(() => {
 		const interval = setInterval(() => {
 			setStats((prev) => {
@@ -128,8 +128,8 @@ const Profile = () => {
 	];
 
 	const handleLogout = () => {
-		setEmail(""); // Clear email on logout
-		navigate("/login"); // Redirect to login page
+		setEmail(""); 
+		navigate("/login"); 
 	};
 
 	const handleProfilePicChange = (e) => {
@@ -274,7 +274,7 @@ const Profile = () => {
 				</h2>
 				<p className="text-gray-500 mb-8 leading-relaxed max-w-2xl mx-auto">
 					Here's a clear snapshot of your performance across the month. Each
-					slice represents a major component of your social growth — from the
+					slice represents a major component of your social growth, from the
 					new followers gained, to the number of posts shared, all the way to
 					the engagement through likes and the inevitable unfollows. Use this
 					monthly view to track your momentum and adjust your strategies moving
