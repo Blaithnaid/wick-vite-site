@@ -50,11 +50,13 @@ const Header = () => {
 	return (
 		<header className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
 			<div className="w-full max-w-[1200px] mx-auto flex items-center justify-between py-2">
-				<div className="lg:hidden text-black h-12 w-12 flex justify-center items-center">
-					<button type="button" onClick={() => setMobileMenuOpen(true)}>
-						<Bars3Icon className="h-6 w-6" />
-					</button>
-				</div>
+				<a
+					className="p-4 rounded-lg text-white hover:cursor-pointer hover:text-gray-400 bg-lavender-400"
+					type="button"
+					href="http://localhost:8081"
+				>
+					Open App
+				</a>
 				<div className="flex-grow flex justify-center items-center space-x-12">
 					<a
 						href={navigation[0].href}
@@ -78,7 +80,7 @@ const Header = () => {
 				{!currentUser ? (
 					<div className="lg:flex flex-shrink-0">
 						<a
-							href="/login"
+							href="/"
 							className="w-32 h-12 flex items-center justify-center rounded-md text-sm font-semibold bg-lavender-400 hover:bg-iguana-400 text-white transition"
 						>
 							Log In
