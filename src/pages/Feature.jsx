@@ -22,10 +22,10 @@ const COLORS = ["#10b981", "#ef4444", "#6366f1", "#ec4899"];
 
 const Profile = () => {
 	const [stats, setStats] = useState({
-		newFollowers: 142,
-		unfollows: 23,
-		posts: 12,
-		likes: 540,
+		newFollowers: 2,
+		unfollows: 0,
+		posts: 3,
+		likes: 5,
 	});
 
 	const [trends, setTrends] = useState({
@@ -36,10 +36,10 @@ const Profile = () => {
 	});
 
 	const [monthlyStats, setMonthlyStats] = useState({
-		newFollowers: 4000,
-		unfollows: 800,
-		posts: 52,
-		likes: 12000,
+		newFollowers: 2,
+		unfollows: 0,
+		posts: 3,
+		likes: 5,
 	});
 
 	const [profilePic, setProfilePic] = useState(defaultProfilePic);
@@ -52,34 +52,6 @@ const Profile = () => {
 	]);
 
 	const navigate = useNavigate(); // Initialize navigate function for routing
-
-	
-	useEffect(() => {
-		const interval = setInterval(() => {
-			setStats((prev) => {
-				const newNewFollowers = Math.floor(Math.random() * 200);
-				const newUnfollows = Math.floor(Math.random() * 50);
-				const newPosts = prev.posts + (Math.random() > 0.8 ? 1 : 0);
-				const newLikes = prev.likes + Math.floor(Math.random() * 100);
-
-				setTrends((prevTrends) => ({
-					newFollowers: [...prevTrends.newFollowers.slice(-9), newNewFollowers],
-					unfollows: [...prevTrends.unfollows.slice(-9), newUnfollows],
-					posts: [...prevTrends.posts.slice(-9), newPosts],
-					likes: [...prevTrends.likes.slice(-9), newLikes],
-				}));
-
-				return {
-					newFollowers: newNewFollowers,
-					unfollows: newUnfollows,
-					posts: newPosts,
-					likes: newLikes,
-				};
-			});
-		}, 4000);
-
-		return () => clearInterval(interval);
-	}, []);
 
 	const statCards = [
 		{
@@ -112,43 +84,17 @@ const Profile = () => {
 		},
 	];
 
-	const chartData = trends.newFollowers.map((_, i) => ({
-		index: `T-${10 - trends.newFollowers.length + i}`,
-		newFollowers: trends.newFollowers[i] || 0,
-		unfollows: trends.unfollows[i] || 0,
-		posts: trends.posts[i] || 0,
-		likes: trends.likes[i] || 0,
-	}));
-
+	const chartData = [
+		{ index: "W-1", newFollowers: 1, unfollows: 0, posts: 3, likes: 4 },
+		{ index: "W-2", newFollowers: 2, unfollows: 0, posts: 3, likes: 5 },
+	];
+	
 	const pieData = [
 		{ name: "New Followers", value: monthlyStats.newFollowers },
 		{ name: "Unfollows", value: monthlyStats.unfollows },
 		{ name: "Posts", value: monthlyStats.posts },
 		{ name: "Likes", value: monthlyStats.likes },
 	];
-
-	const handleLogout = () => {
-		setEmail(""); 
-		navigate("/login"); 
-	};
-
-	const handleProfilePicChange = (e) => {
-		const file = e.target.files[0];
-		if (file) {
-			const reader = new FileReader();
-			reader.onloadend = () => {
-				setProfilePic(reader.result);
-			};
-			reader.readAsDataURL(file);
-		}
-	};
-
-	const getGreeting = () => {
-		const hour = new Date().getHours();
-		if (hour < 12) return "Good Morning";
-		if (hour < 18) return "Good Afternoon";
-		return "Good Evening";
-	};
 
 	return (
 		<div className="min-h-screen bg-gradient-to-br from-gray-100 to-white p-6 md:p-10">
@@ -186,15 +132,8 @@ const Profile = () => {
 					platform. Stay tuned!
 				</p>
 
-				{/* Logout Button */}
-				{email && (
-					<button
-						onClick={handleLogout}
-						className="mt-4 inline-block bg-red-500 text-white px-6 py-2 rounded-md hover:bg-red-600 transition duration-300"
-					>
-						Log Out
-					</button>
-				)}
+				
+				
 			</motion.div>
 
 			{/* Profile Stats Title */}
@@ -207,6 +146,10 @@ const Profile = () => {
 				<h2 className="text-lg font-semibold text-gray-700 mb-4">
 					Weekly Growth Overview
 				</h2>
+				<p className="text-center text-sm text-gray-400 mt-4">
+				📅 Next update: Monday at 9:00 AM
+				</p>
+
 				<ResponsiveContainer width="100%" height={300}>
 					<LineChart data={chartData}>
 						<CartesianGrid strokeDasharray="3 3" />
@@ -219,47 +162,35 @@ const Profile = () => {
 						<Line type="monotone" dataKey="posts" stroke="#6366f1" />
 						<Line type="monotone" dataKey="likes" stroke="#ec4899" />
 					</LineChart>
+					
 				</ResponsiveContainer>
 			</div>
 
 			{/* Stat Cards */}
-			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto mb-12">
-				{statCards.map((card, idx) => (
+				<div className="max-w-6xl mx-auto mb-16">
+				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+					{statCards.map((card, idx) => (
 					<motion.div
 						key={idx}
-						whileHover={{ scale: 1.03 }}
-						whileTap={{ scale: 0.98 }}
+						whileHover={{ scale: 1.05 }}
+						whileTap={{ scale: 0.97 }}
 						transition={{ type: "spring", stiffness: 300 }}
-						className="hover:bg-gray-50 transition duration-300 rounded-lg p-4"
+						className="bg-white border border-gray-200 rounded-2xl p-6 shadow-md hover:shadow-xl hover:border-green-400 transition duration-300 flex flex-col items-center text-center"
 					>
-						<StatCard
-							title={card.title}
-							value={card.value}
-							icon={card.icon}
-							color={card.color}
-							description={card.description}
-						/>
+						<div className="text-4xl mb-3">{card.icon}</div>
+						<h3 className="text-xl font-semibold text-gray-800">{card.title}</h3>
+						<p className="text-3xl font-bold text-green-500 mt-2">{card.value}</p>
+						<p className="text-gray-400 text-sm mt-1">{card.description}</p>
 					</motion.div>
-				))}
-			</div>
-
-			{/* Recent Activities */}
-			<div className="bg-white rounded-2xl shadow-lg p-6 mb-12 max-w-4xl mx-auto border border-gray-100">
-				<h2 className="text-lg font-semibold text-gray-700 mb-4">
-					Recent Activities
-				</h2>
-				<ul className="space-y-4">
-					{recentActivities.map((activity, idx) => (
-						<li
-							key={idx}
-							className="text-gray-600 hover:text-gray-800 transition duration-300"
-						>
-							<strong>{activity.activity}</strong> -{" "}
-							<span className="text-sm text-gray-400">{activity.time}</span>
-						</li>
 					))}
-				</ul>
-			</div>
+				</div>
+				{/* Update Info */}
+				<p className="text-center text-gray-400 text-sm mt-8">
+					🔄 Updates every day at <span className="font-semibold text-gray-700">9:00 AM</span>
+				</p>
+				</div>
+
+
 
 			{/* Pie Chart Section */}
 			<motion.div
