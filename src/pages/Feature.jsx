@@ -156,34 +156,30 @@ const Profile = () => {
 
 			{/* Profile Section */}
 			<motion.div
+			
 				initial={{ opacity: 0, scale: 0.95 }}
 				animate={{ opacity: 1, scale: 1 }}
 				transition={{ duration: 1 }}
 				className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg p-8 text-center mb-12 mt-32 border border-gray-200"
 			>
+				<div className="bg-green-100 text-green-700 px-4 py-3 rounded-lg mt-6">
+					<strong>Coming Soon:</strong> Full Profile Customization! Soon you'll
+					be able to update your profile picture, edit your display name, manage
+					your bio, and personalize your public profile for others to see.
+				</div>
 				<img
 					src={profilePic}
 					alt="Profile"
 					className="w-32 h-32 rounded-full mx-auto border-4 border-green-400 shadow-md mb-4 hover:scale-105 transition-transform duration-300"
 				/>
 				<h2 className="text-2xl font-bold text-gray-800">
-					{email ? `${getGreeting()}, ${userName}!` : "Welcome, Guest!"}
+					{email ? `${getGreeting()}, ${userName}!` : "Welcome"}
 				</h2>
-				<p className="text-gray-500 mt-2">Welcome to your profile dashboard.</p>
+				<p className="text-gray-500 mt-2">To your profile dashboard.</p>
 
-				{/* Upload Profile Picture */}
-				<input
-					type="file"
-					accept="image/*"
-					onChange={handleProfilePicChange}
-					className="mt-4 text-green-500 hover:bg-green-100 rounded-md p-2 transition duration-300"
-				/>
+			
 
-				<div className="bg-green-100 text-green-700 px-4 py-3 rounded-lg mt-6">
-					<strong>Coming Soon:</strong> Full Profile Customization! Soon you'll
-					be able to update your profile picture, edit your display name, manage
-					your bio, and personalize your public profile for others to see.
-				</div>
+				
 				<p className="text-gray-500 mt-4 max-w-2xl mx-auto">
 					This upcoming feature will allow you to truly make your profile your
 					own, showcase your achievements, and build your personal brand on the

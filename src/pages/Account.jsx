@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Header from "../components/Header";
+import Feature from "../pages/Feature"; 
 import { useAuth } from "../contexts/AuthContext";
 
 const Account = () => {
@@ -184,7 +185,7 @@ const Account = () => {
 						<h2 className="text-xl font-semibold text-[#373F51] mb-6">
 							Analytics Overview
 						</h2>
-						{/* Replace this with your actual analytics data */}
+						<Feature />
 						<p className="text-gray-700">Here are some key statistics about your account...</p>
 					</div>
 				)}
