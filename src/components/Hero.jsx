@@ -122,26 +122,7 @@ const Features = () => {
 					))}
 				</div>
 
-				{/* New Features Announcement */}
-				<motion.div
-					initial={{ opacity: 0, scale: 0.8 }}
-					whileInView={{ opacity: 1, scale: 1 }}
-					transition={{ duration: 0.8, ease: "easeOut" }}
-					className="mt-24 text-center"
-				>
-					<h3 className="text-3xl font-extrabold text-white mb-6">
-						New Features Dropping Soon!
-					</h3>
-					<p className="text-lg text-white/80 mb-8">
-						We're working on exciting updates to supercharge your experience.
-						Stay tuned!
-					</p>
-					<a href="/feature" className="inline-block">
-						<button className="bg-white text-[#6F6DB2] font-semibold px-6 py-3 rounded-full hover:bg-[#78C288] hover:text-white transition-all duration-300">
-							See Upcoming Features
-						</button>
-					</a>
-				</motion.div>
+				
 			</div>
 		</div>
 	);
