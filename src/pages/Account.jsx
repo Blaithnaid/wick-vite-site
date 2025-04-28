@@ -186,7 +186,6 @@ const Account = () => {
 							Analytics Overview
 						</h2>
 						<Feature />
-						<p className="text-gray-700">Here are some key statistics about your account...</p>
 					</div>
 				)}
 			</div>
