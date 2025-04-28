@@ -12,13 +12,13 @@ import video from "../assets/wick-video.mp4"; // Import video for the hero secti
 const features = [
 	{
 		name: "User Management",
-		description: "Manage user access and permissions seamlessly.",
+		description: "Manage user access and permissions seamlessly between App and Web.",
 		icon: UserCircleIcon,
 		imageSrc: "https://picsum.photos/400/400?random=1",
 	},
 	{
 		name: "Cloud Storage",
-		description: "Securely store and access your files from anywhere.",
+		description: "Securely store and access your profile from anywhere.",
 		icon: CloudArrowUpIcon,
 		imageSrc: "https://picsum.photos/400/400?random=2",
 	},
