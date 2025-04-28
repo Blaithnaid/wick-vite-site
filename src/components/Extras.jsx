@@ -21,23 +21,23 @@ import {
       icon: ChartPieIcon,
     },
     {
-      name: "Brand Monitoring",
-      description: "Track brand mentions across social media to respond quickly and improve your brand's presence.",
+      name: "Trend Monitoring",
+      description: "Track trends across social media to respond quickly and improve your brand's presence.",
       icon: ChatBubbleLeftIcon,
     },
     {
-      name: "Team Collaboration",
-      description: "Work with your team seamlessly, assign tasks, and manage approval workflows for social media posts.",
+      name: "AI WickBot",
+      description: "Work with your personal AI to help with social media posts and more.",
       icon: UsersIcon,
     },
     {
-      name: "Customer Engagement",
-      description: "Engage with customers by responding to comments, messages, and mentions across all platforms.",
+      name: "Tips and Tricks",
+      description: "Unlock expert advice and strategies with our Tips and Tricks feature, designed to help you in user engagement.",
       icon: InboxIcon,
     },
     {
-      name: "Automated Reporting",
-      description: "Generate custom reports automatically, providing key metrics for performance review and strategy adjustments.",
+      name: "Task Tracker",
+      description: "Keeps all your task in a easy access with reminders to comlpete them.",
       icon: ClipboardDocumentIcon,
     },
   ];
