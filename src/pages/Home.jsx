@@ -16,7 +16,10 @@ const Home = () => {
 		<>
 			<Header />
 			<div className="relative z-10">
-				<div className="w-full text-center" style={{ margin: 0, padding: 0 }}>
+				<div
+					className="w-full text-center"
+					style={{ margin: 0, padding: 0 }}
+				>
 					<Hero />
 				</div>
 				<div className="w-full bg-white text-[#1F1D42] py-20">
@@ -54,7 +57,8 @@ const Home = () => {
 						}}
 					></div>
 					<p className="mb-0">
-						&copy; {new Date().getFullYear()} Wick. All rights reserved.
+						&copy; {new Date().getFullYear()} Wick. All rights
+						reserved.
 					</p>
 				</footer>
 			</div>

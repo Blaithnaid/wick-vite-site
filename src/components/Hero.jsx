@@ -7,6 +7,7 @@ import {
 	LockClosedIcon,
 } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
+import video from "../assets/wick-video.mp4"; // Import video for the hero section
 
 const features = [
 	{
@@ -50,13 +51,13 @@ const Hero = () => {
 		<div className="w-full h-full">
 			{/* Hero Section */}
 			<div className="relative flex items-center justify-center min-h-screen w-full text-center">
-				<iframe
-					src="https://www.youtube.com/embed/SG03JXX1t1I?autoplay=1&mute=1&loop=1&playlist=SG03JXX1t1I"
+				<video
+					src={video}
 					className="absolute inset-0 w-full h-full object-cover -z-10 blur-sm"
-					frameBorder="0"
-					allow="autoplay; encrypted-media"
-					allowFullScreen
-					title="YouTube background"
+					autoPlay
+					muted
+					loop
+					title="Background video"
 				/>
 				<div className="absolute inset-0 bg-black opacity-50 -z-10"></div>
 				<div className="w-full text-white px-0">
@@ -129,7 +130,7 @@ const Features = () => {
 					className="mt-24 text-center"
 				>
 					<h3 className="text-3xl font-extrabold text-white mb-6">
-					  New Features Dropping Soon!
+						New Features Dropping Soon!
 					</h3>
 					<p className="text-lg text-white/80 mb-8">
 						We're working on exciting updates to supercharge your experience.

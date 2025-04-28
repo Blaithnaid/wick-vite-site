@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import logo from "/favicon.svg";
-import defaultProfilePic from "../assets/defaultProfile.jpg";
+import defaultProfilePic from "../assets/user-solid.svg";
 import { useAuth } from "../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 
@@ -51,10 +51,7 @@ const Header = () => {
 		<header className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
 			<div className="w-full max-w-[1200px] mx-auto flex items-center justify-between py-2">
 				<div className="lg:hidden text-black h-12 w-12 flex justify-center items-center">
-					<button
-						type="button"
-						onClick={() => setMobileMenuOpen(true)}
-					>
+					<button type="button" onClick={() => setMobileMenuOpen(true)}>
 						<Bars3Icon className="h-6 w-6" />
 					</button>
 				</div>
@@ -78,7 +75,6 @@ const Header = () => {
 					</a>
 				</div>
 
-				{/* Conditional rendering - show login button or profile pic */}
 				{!currentUser ? (
 					<div className="lg:flex flex-shrink-0">
 						<a
@@ -109,47 +105,21 @@ const Header = () => {
 										</p>
 									</li>
 
-									{/* Profile Picture Upload Option */}
-									<li className="p-2">
-										<label
-											htmlFor="uploadProfilePic"
-											className="block text-sm text-gray-700 cursor-pointer"
-										>
-											Change Profile Picture
-											<input
-												type="file"
-												id="uploadProfilePic"
-												accept="image/*"
-												onChange={
-													handleProfilePicChange
-												}
-												className="hidden"
-											/>
-										</label>
-									</li>
-
-									{/* Account Link */}
-									<li>
-										<a
-											href="/account"
-											className="block p-2 hover:bg-lavender-100"
-										>
-											Account
-										</a>
-									</li>
-
-									{/* Divider */}
-									<li className="divider my-2"></li>
+									<a
+										href="/account"
+										className="block p-2 hover:bg-lavender-100"
+									>
+										Account
+									</a>
 
 									{/* Logout */}
-									<li>
-										<button
-											onClick={handleLogout}
-											className="block w-full text-left p-2 hover:bg-lavender-100"
-										>
-											Logout
-										</button>
-									</li>
+									<a
+										href="/"
+										onClick={handleLogout}
+										className="block p-2 hover:bg-lavender-100"
+									>
+										Log out
+									</a>
 								</ul>
 							</details>
 						</div>
