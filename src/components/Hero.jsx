@@ -62,6 +62,7 @@ const Hero = () => {
 				<div className="absolute inset-0 bg-black opacity-50 -z-10"></div>
 				<div className="w-full text-white px-0">
 					<motion.div
+						className="flex flex-col items-center justify-center h-full"
 						initial={{ opacity: 0, y: 50 }}
 						animate={{ opacity: 1, y: 0 }}
 						exit={{ opacity: 0 }}
@@ -70,10 +71,18 @@ const Hero = () => {
 						<h1 className="text-5xl font-bold tracking-tight sm:text-7xl">
 							Social Media, Simplified.
 						</h1>
-						<p className="mt-8 text-lg font-medium sm:text-xl">
+						<p className="mt-8 mb-6 text-lg font-medium sm:text-xl">
 							Wick brings all of your platforms into one place, making it easier
 							than ever to manage your social media presence.
 						</p>
+						<a
+							className="px-4 py-2 text-white"
+							href="https://www.youtube.com/watch?v=SG03JXX1t1I"
+						>
+							<div className="flex items-center justify-center w-fit p-4 rounded-lg bg-lavender-400">
+								View full video
+							</div>
+						</a>
 					</motion.div>
 				</div>
 			</div>
@@ -121,8 +130,6 @@ const Features = () => {
 						</div>
 					))}
 				</div>
-
-				
 			</div>
 		</div>
 	);
