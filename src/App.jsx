@@ -10,6 +10,7 @@ import Login from "./pages/Login";
 import SignIn from "./pages/SignIn";
 import DownloadPage from "./pages/DownloadPage";
 import Account from "./pages/Account";
+import AdminDash from "./pages/AdminDash";
 import Feature from "./pages/Feature";
 import PrivateRoute from "./components/PrivateRoute";
 import { AuthProvider } from "./contexts/AuthContext";
@@ -32,6 +33,7 @@ const App = () => {
 					<Route element={<PrivateRoute />}>
 						<Route path="/account" element={<Account />} />
 						<Route path="/feature" element={<Feature />} />
+						<Route path="/admin" element={<AdminDash />} />
 					</Route>
 
 					<Route

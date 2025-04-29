@@ -80,7 +80,7 @@ const Header = () => {
 				{!currentUser ? (
 					<div className="lg:flex flex-shrink-0">
 						<a
-							href="/"
+							href="/login"
 							className="w-32 h-12 flex items-center justify-center rounded-md text-sm font-semibold bg-lavender-400 hover:bg-iguana-400 text-white transition"
 						>
 							Log In
@@ -90,14 +90,14 @@ const Header = () => {
 					<div className="flex items-center space-x-2 relative">
 						<div className="dropdown-container">
 							<details className="dropdown">
-								<summary className="avatar">
+								<summary className="avatar -mt-6">
 									<img
 										src={profilePic}
 										alt="Profile"
 										className="w-16 h-16 rounded-full border-2 border-lavender-400 hover:border-iguana-400 transition cursor-pointer"
 									/>
 								</summary>
-								<ul className="bg-white shadow-lg rounded-lg mt-2 text-black absolute top-full right-0 z-50 w-48">
+								<div className="bg-white shadow-lg rounded-lg mt-2 text-black absolute top-full right-0 z-50 w-48">
 									{/* Displaying the email here */}
 									<li className="p-4">
 										<p>
@@ -122,66 +122,12 @@ const Header = () => {
 									>
 										Log out
 									</a>
-								</ul>
+								</div>
 							</details>
 						</div>
 					</div>
 				)}
 			</div>
-			<Dialog
-				open={mobileMenuOpen}
-				onClose={setMobileMenuOpen}
-				className="lg:hidden"
-			>
-				<div className="fixed inset-0 z-40 bg-black opacity-75" />
-				<Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-[#1B1B1B] p-6 shadow-lg">
-					<div className="flex items-center justify-between">
-						<img src={logo} alt="Logo" className="h-8 w-auto" />
-						<button
-							type="button"
-							onClick={() => setMobileMenuOpen(false)}
-							className="text-white"
-						>
-							<XMarkIcon className="h-6 w-6" />
-						</button>
-					</div>
-					<div className="mt-6 space-y-4">
-						{navigation.map((item) => (
-							<a
-								key={item.name}
-								href={item.href}
-								className="block text-lg text-iguana-400 hover:text-lavender-400 transition"
-							>
-								{item.name}
-							</a>
-						))}
-
-						{!currentUser ? (
-							<a
-								href="/login"
-								className="block text-lg text-white bg-lavender-400 px-4 py-2 rounded-full text-center hover:bg-iguana-400 transition"
-							>
-								Log In
-							</a>
-						) : (
-							<>
-								<a
-									href="/account"
-									className="block text-lg text-white bg-lavender-400 px-4 py-2 rounded-full text-center hover:bg-iguana-400 transition"
-								>
-									Account
-								</a>
-								<button
-									onClick={handleLogout}
-									className="block w-full text-lg text-white bg-lavender-400 px-4 py-2 rounded-full text-center hover:bg-iguana-400 transition"
-								>
-									Logout
-								</button>
-							</>
-						)}
-					</div>
-				</Dialog.Panel>
-			</Dialog>
 		</header>
 	);
 };
