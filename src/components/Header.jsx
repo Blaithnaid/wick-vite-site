@@ -38,7 +38,7 @@ const Header = () => {
 				<a
 					className="p-4 rounded-lg text-white hover:cursor-pointer hover:text-gray-400 bg-lavender-400"
 					type="button"
-					href="http://localhost:8081"
+					href="https://wick.expo.app/"
 				>
 					Open App
 				</a>
