@@ -3,7 +3,7 @@
 to run the site:
 
 - install all dependencies with `npm install`
-- run the dev server `npx vite`
+- run the dev server with `npx vite`
 
 to deploy the site (only for developers):
 
