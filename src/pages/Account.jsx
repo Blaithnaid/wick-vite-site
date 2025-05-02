@@ -1,11 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import Feature from "../pages/Feature";
 import { useAuth } from "../contexts/AuthContext";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { db } from "../firebase";
+import { doc, getDoc } from "firebase/firestore";
 
 const Account = () => {
+	const navigate = useNavigate();
 	const { currentUser } = useAuth();
 	const [activeTab, setActiveTab] = useState("profile");
+	const [isAdmin, setIsAdmin] = useState(false);
+
+	useEffect(() => {
+		const fetchUserData = async () => {
+			if (currentUser) {
+				const userDoc = await getDoc(doc(db, "users", currentUser.uid));
+				if (userDoc.exists() && userDoc.data().isAdmin) {
+					setIsAdmin(true);
+				}
+			}
+		};
+		fetchUserData();
+		console.log("isAdmin: ", isAdmin);
+	}, [currentUser]);
 
 	return (
 		<div className="w-full h-full bg-gray-200">
@@ -15,6 +33,14 @@ const Account = () => {
 
 				{/* Account Navigation Tabs */}
 				<nav className="flex gap-4 mb-8">
+					{isAdmin && (
+						<button
+							className="rounded-3xl p-4 bg-gradient-to-r from-slate-500 to-violet-500 text-white"
+							onClick={() => navigate("/admin")}
+						>
+							Admin Settings
+						</button>
+					)}
 					{["profile", "analytics"].map((tab) => (
 						<button
 							key={tab}
