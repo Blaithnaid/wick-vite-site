@@ -51,10 +51,7 @@ const Download = () => {
 				}}
 			>
 				You can also download for Android via{" "}
-				<a href="https://www.mediafire.com/file/4v778ukgepjm4wv/wick-final.apk/file">
-					this link
-				</a>
-				.
+				<a href="https://pixeldrain.com/u/W3ZmyZnP">this link</a>.
 			</p>
 
 			{/* QR Code Image */}
