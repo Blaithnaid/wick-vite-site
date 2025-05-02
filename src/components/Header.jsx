@@ -1,6 +1,4 @@
 import { useState, useEffect } from "react";
-import { Dialog } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import logo from "/favicon.svg";
 import defaultProfilePic from "../assets/user-solid.svg";
 import { useAuth } from "../contexts/AuthContext";
@@ -23,19 +21,6 @@ const Header = () => {
 			setProfilePic(currentUser.photoURL);
 		}
 	}, [currentUser]);
-
-	// Handle profile picture change
-	const handleProfilePicChange = (event) => {
-		const file = event.target.files[0];
-		if (file) {
-			const reader = new FileReader();
-			reader.onloadend = () => {
-				setProfilePic(reader.result);
-				// Here you could upload to Firebase storage and update user profile
-			};
-			reader.readAsDataURL(file);
-		}
-	};
 
 	// Handle logout
 	const handleLogout = async () => {

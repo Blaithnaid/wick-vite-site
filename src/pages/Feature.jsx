@@ -13,10 +13,9 @@ import {
 	Pie,
 	Cell,
 } from "recharts";
-import StatCard from "../components/StatCard";
 import Header from "../components/Header";
-import defaultProfilePic from "../assets/user-solid.svg"; // For now, using the default profile pic
-import { useNavigate } from "react-router-dom"; // Import navigate for routing
+import defaultProfilePic from "../assets/user-solid.svg";
+import { useNavigate } from "react-router-dom";
 
 const COLORS = ["#10b981", "#ef4444", "#6366f1", "#ec4899"];
 
@@ -88,7 +87,7 @@ const Profile = () => {
 		{ index: "W-1", newFollowers: 1, unfollows: 0, posts: 3, likes: 4 },
 		{ index: "W-2", newFollowers: 2, unfollows: 0, posts: 3, likes: 5 },
 	];
-	
+
 	const pieData = [
 		{ name: "New Followers", value: monthlyStats.newFollowers },
 		{ name: "Unfollows", value: monthlyStats.unfollows },
@@ -102,7 +101,6 @@ const Profile = () => {
 
 			{/* Profile Section */}
 			<motion.div
-			
 				initial={{ opacity: 0, scale: 0.95 }}
 				animate={{ opacity: 1, scale: 1 }}
 				transition={{ duration: 1 }}
@@ -123,17 +121,11 @@ const Profile = () => {
 				</h2>
 				<p className="text-gray-500 mt-2">To your profile dashboard.</p>
 
-			
-
-				
 				<p className="text-gray-500 mt-4 max-w-2xl mx-auto">
 					This upcoming feature will allow you to truly make your profile your
 					own, showcase your achievements, and build your personal brand on the
 					platform. Stay tuned!
 				</p>
-
-				
-				
 			</motion.div>
 
 			{/* Profile Stats Title */}
@@ -147,7 +139,7 @@ const Profile = () => {
 					Weekly Growth Overview
 				</h2>
 				<p className="text-center text-sm text-gray-400 mt-4">
-				📅 Next update: Monday at 9:00 AM
+					📅 Next update: Monday at 9:00 AM
 				</p>
 
 				<ResponsiveContainer width="100%" height={300}>
@@ -162,35 +154,37 @@ const Profile = () => {
 						<Line type="monotone" dataKey="posts" stroke="#6366f1" />
 						<Line type="monotone" dataKey="likes" stroke="#ec4899" />
 					</LineChart>
-					
 				</ResponsiveContainer>
 			</div>
 
 			{/* Stat Cards */}
-				<div className="max-w-6xl mx-auto mb-16">
+			<div className="max-w-6xl mx-auto mb-16">
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
 					{statCards.map((card, idx) => (
-					<motion.div
-						key={idx}
-						whileHover={{ scale: 1.05 }}
-						whileTap={{ scale: 0.97 }}
-						transition={{ type: "spring", stiffness: 300 }}
-						className="bg-white border border-gray-200 rounded-2xl p-6 shadow-md hover:shadow-xl hover:border-green-400 transition duration-300 flex flex-col items-center text-center"
-					>
-						<div className="text-4xl mb-3">{card.icon}</div>
-						<h3 className="text-xl font-semibold text-gray-800">{card.title}</h3>
-						<p className="text-3xl font-bold text-green-500 mt-2">{card.value}</p>
-						<p className="text-gray-400 text-sm mt-1">{card.description}</p>
-					</motion.div>
+						<motion.div
+							key={idx}
+							whileHover={{ scale: 1.05 }}
+							whileTap={{ scale: 0.97 }}
+							transition={{ type: "spring", stiffness: 300 }}
+							className="bg-white border border-gray-200 rounded-2xl p-6 shadow-md hover:shadow-xl hover:border-green-400 transition duration-300 flex flex-col items-center text-center"
+						>
+							<div className="text-4xl mb-3">{card.icon}</div>
+							<h3 className="text-xl font-semibold text-gray-800">
+								{card.title}
+							</h3>
+							<p className="text-3xl font-bold text-green-500 mt-2">
+								{card.value}
+							</p>
+							<p className="text-gray-400 text-sm mt-1">{card.description}</p>
+						</motion.div>
 					))}
 				</div>
 				{/* Update Info */}
 				<p className="text-center text-gray-400 text-sm mt-8">
-					🔄 Updates every day at <span className="font-semibold text-gray-700">9:00 AM</span>
+					🔄 Updates every day at{" "}
+					<span className="font-semibold text-gray-700">9:00 AM</span>
 				</p>
-				</div>
-
-
+			</div>
 
 			{/* Pie Chart Section */}
 			<motion.div
@@ -205,9 +199,9 @@ const Profile = () => {
 				</h2>
 				<p className="text-gray-500 mb-8 leading-relaxed max-w-2xl mx-auto">
 					Here's a clear snapshot of your performance across the month. Each
-					slice represents a major component of your social growth, from the
-					new followers gained, to the number of posts shared, all the way to
-					the engagement through likes and the inevitable unfollows. Use this
+					slice represents a major component of your social growth, from the new
+					followers gained, to the number of posts shared, all the way to the
+					engagement through likes and the inevitable unfollows. Use this
 					monthly view to track your momentum and adjust your strategies moving
 					forward.
 				</p>
